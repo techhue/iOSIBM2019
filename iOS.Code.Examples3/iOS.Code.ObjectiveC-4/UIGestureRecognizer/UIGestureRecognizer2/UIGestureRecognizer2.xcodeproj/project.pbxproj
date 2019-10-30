@@ -1,0 +1,300 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0338EBCD199144D30053E933 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0338EBCC199144D30053E933 /* UIKit.framework */; };
+		0338EBCF199144D30053E933 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0338EBCE199144D30053E933 /* Foundation.framework */; };
+		0338EBD1199144D30053E933 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0338EBD0199144D30053E933 /* CoreGraphics.framework */; };
+		0338EBD7199144D30053E933 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0338EBD5199144D30053E933 /* InfoPlist.strings */; };
+		0338EBD9199144D30053E933 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338EBD8199144D30053E933 /* main.m */; };
+		0338EBDD199144D30053E933 /* UGRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338EBDC199144D30053E933 /* UGRAppDelegate.m */; };
+		0338EBDF199144D30053E933 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0338EBDE199144D30053E933 /* Default.png */; };
+		0338EBE1199144D30053E933 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0338EBE0199144D30053E933 /* Default@2x.png */; };
+		0338EBE3199144D30053E933 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0338EBE2199144D30053E933 /* Default-568h@2x.png */; };
+		0338EBEB199144EC0053E933 /* UGRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338EBEA199144EC0053E933 /* UGRViewController.m */; };
+		0338EBED19914C3B0053E933 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0338EBEC19914C3B0053E933 /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0338EBC9199144D30053E933 /* UIGestureRecognizer2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIGestureRecognizer2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0338EBCC199144D30053E933 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0338EBCE199144D30053E933 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0338EBD0199144D30053E933 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0338EBD4199144D30053E933 /* UIGestureRecognizer2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UIGestureRecognizer2-Info.plist"; sourceTree = "<group>"; };
+		0338EBD6199144D30053E933 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0338EBD8199144D30053E933 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0338EBDA199144D30053E933 /* UIGestureRecognizer2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer2-Prefix.pch"; sourceTree = "<group>"; };
+		0338EBDB199144D30053E933 /* UGRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UGRAppDelegate.h; sourceTree = "<group>"; };
+		0338EBDC199144D30053E933 /* UGRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UGRAppDelegate.m; sourceTree = "<group>"; };
+		0338EBDE199144D30053E933 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		0338EBE0199144D30053E933 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		0338EBE2199144D30053E933 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		0338EBE9199144EC0053E933 /* UGRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UGRViewController.h; sourceTree = "<group>"; };
+		0338EBEA199144EC0053E933 /* UGRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UGRViewController.m; sourceTree = "<group>"; };
+		0338EBEC19914C3B0053E933 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0338EBC6199144D30053E933 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0338EBED19914C3B0053E933 /* QuartzCore.framework in Frameworks */,
+				0338EBCD199144D30053E933 /* UIKit.framework in Frameworks */,
+				0338EBCF199144D30053E933 /* Foundation.framework in Frameworks */,
+				0338EBD1199144D30053E933 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0338EBC0199144D30053E933 = {
+			isa = PBXGroup;
+			children = (
+				0338EBD2199144D30053E933 /* UIGestureRecognizer2 */,
+				0338EBCB199144D30053E933 /* Frameworks */,
+				0338EBCA199144D30053E933 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0338EBCA199144D30053E933 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0338EBC9199144D30053E933 /* UIGestureRecognizer2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0338EBCB199144D30053E933 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0338EBEC19914C3B0053E933 /* QuartzCore.framework */,
+				0338EBCC199144D30053E933 /* UIKit.framework */,
+				0338EBCE199144D30053E933 /* Foundation.framework */,
+				0338EBD0199144D30053E933 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0338EBD2199144D30053E933 /* UIGestureRecognizer2 */ = {
+			isa = PBXGroup;
+			children = (
+				0338EBDB199144D30053E933 /* UGRAppDelegate.h */,
+				0338EBDC199144D30053E933 /* UGRAppDelegate.m */,
+				0338EBD3199144D30053E933 /* Supporting Files */,
+				0338EBE9199144EC0053E933 /* UGRViewController.h */,
+				0338EBEA199144EC0053E933 /* UGRViewController.m */,
+			);
+			path = UIGestureRecognizer2;
+			sourceTree = "<group>";
+		};
+		0338EBD3199144D30053E933 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0338EBD4199144D30053E933 /* UIGestureRecognizer2-Info.plist */,
+				0338EBD5199144D30053E933 /* InfoPlist.strings */,
+				0338EBD8199144D30053E933 /* main.m */,
+				0338EBDA199144D30053E933 /* UIGestureRecognizer2-Prefix.pch */,
+				0338EBDE199144D30053E933 /* Default.png */,
+				0338EBE0199144D30053E933 /* Default@2x.png */,
+				0338EBE2199144D30053E933 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0338EBC8199144D30053E933 /* UIGestureRecognizer2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0338EBE6199144D30053E933 /* Build configuration list for PBXNativeTarget "UIGestureRecognizer2" */;
+			buildPhases = (
+				0338EBC5199144D30053E933 /* Sources */,
+				0338EBC6199144D30053E933 /* Frameworks */,
+				0338EBC7199144D30053E933 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UIGestureRecognizer2;
+			productName = UIGestureRecognizer2;
+			productReference = 0338EBC9199144D30053E933 /* UIGestureRecognizer2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0338EBC1199144D30053E933 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = UGR;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "TechHue Systems";
+			};
+			buildConfigurationList = 0338EBC4199144D30053E933 /* Build configuration list for PBXProject "UIGestureRecognizer2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0338EBC0199144D30053E933;
+			productRefGroup = 0338EBCA199144D30053E933 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0338EBC8199144D30053E933 /* UIGestureRecognizer2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0338EBC7199144D30053E933 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0338EBD7199144D30053E933 /* InfoPlist.strings in Resources */,
+				0338EBDF199144D30053E933 /* Default.png in Resources */,
+				0338EBE1199144D30053E933 /* Default@2x.png in Resources */,
+				0338EBE3199144D30053E933 /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0338EBC5199144D30053E933 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0338EBD9199144D30053E933 /* main.m in Sources */,
+				0338EBDD199144D30053E933 /* UGRAppDelegate.m in Sources */,
+				0338EBEB199144EC0053E933 /* UGRViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0338EBD5199144D30053E933 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0338EBD6199144D30053E933 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0338EBE4199144D30053E933 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0338EBE5199144D30053E933 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0338EBE7199144D30053E933 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UIGestureRecognizer2/UIGestureRecognizer2-Prefix.pch";
+				INFOPLIST_FILE = "UIGestureRecognizer2/UIGestureRecognizer2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0338EBE8199144D30053E933 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UIGestureRecognizer2/UIGestureRecognizer2-Prefix.pch";
+				INFOPLIST_FILE = "UIGestureRecognizer2/UIGestureRecognizer2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0338EBC4199144D30053E933 /* Build configuration list for PBXProject "UIGestureRecognizer2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0338EBE4199144D30053E933 /* Debug */,
+				0338EBE5199144D30053E933 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0338EBE6199144D30053E933 /* Build configuration list for PBXNativeTarget "UIGestureRecognizer2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0338EBE7199144D30053E933 /* Debug */,
+				0338EBE8199144D30053E933 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0338EBC1199144D30053E933 /* Project object */;
+}

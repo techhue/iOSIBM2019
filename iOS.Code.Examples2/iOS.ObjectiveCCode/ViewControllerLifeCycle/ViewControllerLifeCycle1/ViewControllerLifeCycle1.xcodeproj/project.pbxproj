@@ -1,0 +1,296 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0314B1581990DC2000C0ADDE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0314B1571990DC2000C0ADDE /* UIKit.framework */; };
+		0314B15A1990DC2000C0ADDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0314B1591990DC2000C0ADDE /* Foundation.framework */; };
+		0314B15C1990DC2000C0ADDE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0314B15B1990DC2000C0ADDE /* CoreGraphics.framework */; };
+		0314B1621990DC2000C0ADDE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0314B1601990DC2000C0ADDE /* InfoPlist.strings */; };
+		0314B1641990DC2000C0ADDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0314B1631990DC2000C0ADDE /* main.m */; };
+		0314B1681990DC2100C0ADDE /* VCLCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0314B1671990DC2100C0ADDE /* VCLCAppDelegate.m */; };
+		0314B16A1990DC2100C0ADDE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0314B1691990DC2100C0ADDE /* Default.png */; };
+		0314B16C1990DC2100C0ADDE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0314B16B1990DC2100C0ADDE /* Default@2x.png */; };
+		0314B16E1990DC2100C0ADDE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0314B16D1990DC2100C0ADDE /* Default-568h@2x.png */; };
+		0314B1761990DC4300C0ADDE /* VCLCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0314B1751990DC4300C0ADDE /* VCLCViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0314B1541990DC2000C0ADDE /* ViewControllerLifeCycle1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViewControllerLifeCycle1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0314B1571990DC2000C0ADDE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0314B1591990DC2000C0ADDE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0314B15B1990DC2000C0ADDE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0314B15F1990DC2000C0ADDE /* ViewControllerLifeCycle1-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ViewControllerLifeCycle1-Info.plist"; sourceTree = "<group>"; };
+		0314B1611990DC2000C0ADDE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0314B1631990DC2000C0ADDE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0314B1651990DC2000C0ADDE /* ViewControllerLifeCycle1-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewControllerLifeCycle1-Prefix.pch"; sourceTree = "<group>"; };
+		0314B1661990DC2100C0ADDE /* VCLCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCLCAppDelegate.h; sourceTree = "<group>"; };
+		0314B1671990DC2100C0ADDE /* VCLCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCLCAppDelegate.m; sourceTree = "<group>"; };
+		0314B1691990DC2100C0ADDE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		0314B16B1990DC2100C0ADDE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		0314B16D1990DC2100C0ADDE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		0314B1741990DC4300C0ADDE /* VCLCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCLCViewController.h; sourceTree = "<group>"; };
+		0314B1751990DC4300C0ADDE /* VCLCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCLCViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0314B1511990DC2000C0ADDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0314B1581990DC2000C0ADDE /* UIKit.framework in Frameworks */,
+				0314B15A1990DC2000C0ADDE /* Foundation.framework in Frameworks */,
+				0314B15C1990DC2000C0ADDE /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0314B14B1990DC2000C0ADDE = {
+			isa = PBXGroup;
+			children = (
+				0314B15D1990DC2000C0ADDE /* ViewControllerLifeCycle1 */,
+				0314B1561990DC2000C0ADDE /* Frameworks */,
+				0314B1551990DC2000C0ADDE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0314B1551990DC2000C0ADDE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0314B1541990DC2000C0ADDE /* ViewControllerLifeCycle1.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0314B1561990DC2000C0ADDE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0314B1571990DC2000C0ADDE /* UIKit.framework */,
+				0314B1591990DC2000C0ADDE /* Foundation.framework */,
+				0314B15B1990DC2000C0ADDE /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0314B15D1990DC2000C0ADDE /* ViewControllerLifeCycle1 */ = {
+			isa = PBXGroup;
+			children = (
+				0314B1661990DC2100C0ADDE /* VCLCAppDelegate.h */,
+				0314B1671990DC2100C0ADDE /* VCLCAppDelegate.m */,
+				0314B15E1990DC2000C0ADDE /* Supporting Files */,
+				0314B1741990DC4300C0ADDE /* VCLCViewController.h */,
+				0314B1751990DC4300C0ADDE /* VCLCViewController.m */,
+			);
+			path = ViewControllerLifeCycle1;
+			sourceTree = "<group>";
+		};
+		0314B15E1990DC2000C0ADDE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0314B15F1990DC2000C0ADDE /* ViewControllerLifeCycle1-Info.plist */,
+				0314B1601990DC2000C0ADDE /* InfoPlist.strings */,
+				0314B1631990DC2000C0ADDE /* main.m */,
+				0314B1651990DC2000C0ADDE /* ViewControllerLifeCycle1-Prefix.pch */,
+				0314B1691990DC2100C0ADDE /* Default.png */,
+				0314B16B1990DC2100C0ADDE /* Default@2x.png */,
+				0314B16D1990DC2100C0ADDE /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0314B1531990DC2000C0ADDE /* ViewControllerLifeCycle1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0314B1711990DC2100C0ADDE /* Build configuration list for PBXNativeTarget "ViewControllerLifeCycle1" */;
+			buildPhases = (
+				0314B1501990DC2000C0ADDE /* Sources */,
+				0314B1511990DC2000C0ADDE /* Frameworks */,
+				0314B1521990DC2000C0ADDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ViewControllerLifeCycle1;
+			productName = ViewControllerLifeCycle1;
+			productReference = 0314B1541990DC2000C0ADDE /* ViewControllerLifeCycle1.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0314B14C1990DC2000C0ADDE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = VCLC;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "TechHue Systems";
+			};
+			buildConfigurationList = 0314B14F1990DC2000C0ADDE /* Build configuration list for PBXProject "ViewControllerLifeCycle1" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0314B14B1990DC2000C0ADDE;
+			productRefGroup = 0314B1551990DC2000C0ADDE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0314B1531990DC2000C0ADDE /* ViewControllerLifeCycle1 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0314B1521990DC2000C0ADDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0314B1621990DC2000C0ADDE /* InfoPlist.strings in Resources */,
+				0314B16A1990DC2100C0ADDE /* Default.png in Resources */,
+				0314B16C1990DC2100C0ADDE /* Default@2x.png in Resources */,
+				0314B16E1990DC2100C0ADDE /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0314B1501990DC2000C0ADDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0314B1641990DC2000C0ADDE /* main.m in Sources */,
+				0314B1681990DC2100C0ADDE /* VCLCAppDelegate.m in Sources */,
+				0314B1761990DC4300C0ADDE /* VCLCViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0314B1601990DC2000C0ADDE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0314B1611990DC2000C0ADDE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0314B16F1990DC2100C0ADDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0314B1701990DC2100C0ADDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0314B1721990DC2100C0ADDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ViewControllerLifeCycle1/ViewControllerLifeCycle1-Prefix.pch";
+				INFOPLIST_FILE = "ViewControllerLifeCycle1/ViewControllerLifeCycle1-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0314B1731990DC2100C0ADDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ViewControllerLifeCycle1/ViewControllerLifeCycle1-Prefix.pch";
+				INFOPLIST_FILE = "ViewControllerLifeCycle1/ViewControllerLifeCycle1-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0314B14F1990DC2000C0ADDE /* Build configuration list for PBXProject "ViewControllerLifeCycle1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0314B16F1990DC2100C0ADDE /* Debug */,
+				0314B1701990DC2100C0ADDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0314B1711990DC2100C0ADDE /* Build configuration list for PBXNativeTarget "ViewControllerLifeCycle1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0314B1721990DC2100C0ADDE /* Debug */,
+				0314B1731990DC2100C0ADDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0314B14C1990DC2000C0ADDE /* Project object */;
+}

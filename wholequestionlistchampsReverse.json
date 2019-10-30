@@ -1,0 +1,1830 @@
+ { var questionData : [
+//Question 1
+    {
+
+// Single Answer
+        "promptText": "When you position a label near the top of a view in Interface Builder,
+        what should you do to ensure that the label isn't obscured by the system bar?
+        (Select the best answer.)",
+        "options": [
+   { "text": "Turn on Dynamic Positioning in the Attributes inspector for the object." },
+   { "text": "Add 24 to a constraint that's constrained to the top of the view." },
+   { "text": "Constrain the top constraint to the Safe Area.", "solution": true },
+   { "text": "Nothing; iOS will automatically take the system bar into account while positioning the label."},
+        ],
+    },
+    //Question 2
+    {
+
+// Single Answer
+        "promptText": "If all of an object's properties conform to the Codable protocol,
+        which additional step must your object take—in addition to putting Codable in its declaration—to
+         make it conform to the Codable protocol?
+         (Select the best answer.)",
+        "options": [
+   { "text": "Adopt the init(from:) method" },
+   { "text": "Adopt the encode(to:) method" },
+   { "text": "Subclass NSObject"},
+   { "text": "None", "solution": true },
+        ],
+    },
+//Question 3
+    {
+
+// Single Answer
+        "promptText": "Which protocol should a type declaration adopt to allow the objects to be converted
+        to a form of data that can be written to a file?(Select the best answer.)",
+        "options": [
+   { "text": "Writable" },
+   { "text": "Encodable" },
+   { "text": "Convertable"},
+   { "text": "Codable", "solution": true },
+        ],
+    },
+//Question 4
+    {
+
+// Single Answer
+        "promptText": "When you use the Codable protocol to translate information from JSON into your custom model object, what must you do when the JSON keys don't match the object's property names?(Select the best answer.)",
+        "options": [
+   { "text": "Implement the decode(from:) method to copy the JSON values to the object's properties." },
+   { "text": "Rename the model object's properties to match the JSON keys." },
+   { "text": "Declare a nested enumeration named CodingKeys that conforms to the CodingKey protocol.", "solution": true },
+   { "text": "Add a mapping method to the model object that translates the JSON keys to match the object's properties."},
+        ],
+    },
+//Question 5
+    {
+
+// Single Answer
+        "promptText": "In the following Swift example, what should replace the two blanks to allow the string
+        to contain the multiple lines?  ( let greetingString = ___Hello.How are you doing?___ )(Select the best answer.)",
+        "options": [
+   { "text": "\"" },
+   { "text": "/\"" },
+   { "text": "'"},
+   { "text": "\"\"\"", "solution": true },
+        ],
+    },
+//Question 6
+    {
+
+// Single Answer
+        "promptText": "An XIB is: (Select the best answer.)",
+        "options": [
+   { "text": "A scene in a storyboard" },
+   { "text": "The old name for a storyboard" },
+   { "text": "A type of connection in Interface Builder"},
+   { "text": "A metadata file that Xcode uses for project management" },
+   { "text": "Like a storyboard file, but represents only a single view hierarchy", "solution": true },
+        ],
+    },
+    //Question 7
+    {
+
+// Multiple Answer
+        "promptText": "Which of the following are valid ways to identify a storyboard's initial view controller? (Select two.) ",
+        "options": [
+   { "text": "The initial view controller is always at the top of the storyboard." },
+   { "text": "The initial view controller's scene is always sorted first in the document outline." },
+   { "text": "The initial view controller is always indicated by a gray arrow in the storyboard canvas.", "solution": true},
+   { "text": "The initial view controller is always highlighted with a blue border in the storyboard." },
+   { "text": "The 'Is Initial View Controller' option is always selected for the initial view controller in the Attributes inspector.", "solution": true },
+        ],
+
+    },
+//Question 8
+    {
+
+// Single Answer
+        "promptText": "Suppose you create an app for chatting online with colleagues.
+        Which of the following would be represented in code by a model object?(Select the best answer.) ",
+        "options": [
+   { "text": "The sign-in screen"},
+   { "text": "A web sync service"},
+   { "text": "A message recipient", "solution": true},
+   { "text": "The settings page"},
+   { "text": "The Send button" },
+        ],
+    },
+//Question 9
+    {
+
+// Single Answer
+        "promptText": "Which of the following is true of the Model View Controller design pattern? (Select the best answer.) ",
+        "options": [
+   { "text": "Views tend to be app-specific and nonreusable."},
+   { "text": "You should group your model types into a single file." },
+   { "text": "You should use controllers sparingly."},
+   { "text": "Models should never own views.", "solution": true},
+        ],
+    },
+//Question 10
+    {
+
+// Multiple Answer
+        "promptText": "What are the built-in table view styles? (Select two.) ",
+        "options": [
+   { "text": "Plain", "solution": true  },
+   { "text": "Grouped", "solution": true },
+   { "text": "Grid"},
+   { "text": "List"},
+   { "text": "Collection"},
+        ],
+    },
+     //Question 11
+    {
+
+// Multiple Answer
+        "promptText": "Without subclassing 'UITableViewCell',
+        there are three subview outlets available for displaying a table view cell's content. What are they? (Select three.)  ",
+        "options": [
+   { "text": "thumbnail"},
+   { "text": "imageView", "solution": true },
+   { "text": "textLabel", "solution": true },
+   { "text": "accessoryView"},
+   { "text": "detailTextLabel", "solution": true},
+        ],
+    },
+    //Question 12
+    {
+
+// Single Answer
+        "promptText": "Consider the following snippet and then answer the question:
+         ( override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+         {let cell = UITableViewCell(style: .default, reuseIdentifier:\"MealCell\")
+           let meal = meals[indexPath.row]cell.textLabel?.text = meal.namereturn cell} )
+           This code has a problem. What is it?(Select the best answer.)",
+        "options": [
+   { "text": "A table view cell should be dequeued, not instantiated directly.", "solution": true},
+   { "text": "The relevant property of the 'indexPath' is item, not row."},
+   { "text": "The reuse identifier should be an integer, not a string."},
+   { "text": "The 'textLabel' property of 'UITableViewCell' is not optional."},
+        ],
+    },
+     //Question 13
+    {
+
+// Multiple Answer
+        "promptText": "The UITableViewDataSource protocol has only two required methods. What are they? (Select two.) ",
+        "options": [
+   { "text": "numberOfSections(in:)"},
+   { "text": "tableView(_:cellForRowAt:)", "solution": true },
+   { "text": "tableView(_:numberOfRowsInSection:)", "solution": true },
+   { "text": "tableView(_:didSelectRowAt:)"},
+   { "text": "tableView(_:heightForRowAt:)"},
+        ],
+    },
+    //Question 14
+    {
+
+// Single Answer
+        "promptText": "Which 'UITableViewDelegate' method is most commonly implemented in order to respond to taps on table view cells?
+        (Select the best answer.) ",
+        "options": [
+   { "text": "tableView(_:didSelectRowAt:)", "solution": true},
+   { "text": "tableView(_:willSelectRowAt:)"},
+   { "text": "tableView(_:didDeselectRowAt:)"},
+   { "text": "tableView(_:accessoryButtonTappedForRowWithIndexPath:)"},
+   { "text": "tableView(_:performAction:forRowAtIndexPath:withSender:)" },
+        ],
+    },
+    //Question 15
+    {
+
+// Single Answer
+        "promptText": "How many table view cells will a table view request when it loads?(Select the best answer.) ",
+        "options": [
+   { "text": "Only those that will be immediately visible", "solution": true},
+   { "text": "All of them"},
+   { "text": "All cells for the current table view section"},
+   { "text": "Fourteen"},
+   { "text": "As many as it can, until tableView(_:cellForRowAt:) returns nil", "html" : "As many as it can, until ( tableView(_:cellForRowAt:) ) returns ( nil )" },
+        ],
+    },
+    //Question 16
+    {
+
+// Single Answer
+        "promptText": "When the user performs a swipe-to-delete action on a table view cell, which data source callback is called first?(Select the best answer.) ",
+        "options": [
+   { "text": "tableView(_:canEditRowAt:)", "solution": true},
+   { "text": "tableView(_:editingStyleForRowAt:)"},
+   { "text": "tableView(_:commit:forRowAt:)"},
+   { "text": "tableView(_:willBeginEditingRowAt:)"},
+   { "text": "tableView(_:editActionsForRowAt:)" },
+        ],
+    },
+    //Question 17
+    {
+
+// Single Answer
+        "promptText": "How do you create a static table view?(Select the best answer.)",
+        "options": [
+   { "text": "Instantiate one directly using 'UIStaticTableView(frame:style:)'."},
+   { "text": "Create a table view and set its dynamic property to false."},
+   { "text": "Add a table view in Interface Builder and set its 'content' attribute to 'Static Cells'.", "solution": true},
+   { "text": "Create a table view and assign its 'dataSource' property to itself."},
+        ],
+    },
+    //Question 18
+    {
+
+// Single Answer
+        "promptText": "Which callback pattern does ( UITableViewRowAction ) use to handle swipe actions on table view cells?
+        (Select the best answer.) ",
+        "options": [
+   { "text": "Closures", "solution": true},
+   { "text": "Delegation"},
+   { "text": "Notification Center"},
+   { "text": "Target/Action"},
+   { "text": "Key-Value Observing" },
+        ],
+    },
+    //Question 19
+    {
+
+// Single Answer
+        "promptText": "Suppose you intend to save archived data to disk. Which class should you use to get the URL of your app’s documents directory?(Select the best answer.) ",
+        "options": [
+   { "text": "FileManager", "solution": true},
+   { "text": "UIDocument"},
+   { "text": "FileWrapper"},
+   { "text": "NSKeyedArchiver"},
+   { "text": "NSCoder" },
+        ],
+    },
+     //Question 20
+    {
+
+// Multiple Answer
+        "promptText": "Which of the following are roles of the sandbox? (Select two). ",
+        "options": [
+   { "text": "To provide a safe way to execute scripted code without crashing your app"},
+   { "text": "To prevent apps from directly accessing each other's content", "solution": true },
+   { "text": "To prevent apps from directly accessing system-owned content", "solution": true },
+   { "text": "To give you a way to rapidly prototype Swift code"},
+   { "text": "To allow apps to communicate with one another and share data"},
+        ],
+    },
+//Question 21
+    {
+
+// Single Answer
+        "promptText": "Consider the following snippet and then answer the question:
+        ( let alertController = UIAlertController(title: \"I'm sorry Dave\", message: \"I'm afraid I can't do that.\",preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: \"OK", style: .cancel)
+         { (alertAction) inprint(\"Uh, oh!\")}alertController.addAction(cancelAction)present(alertController, animated: true, completion: nil) )
+         Regarding this presentation of an alert controller, when should the alert controller be dismissed?(Select the best answer.)",
+        "options": [
+   { "text": "Nowhere; it will be dismissed automatically when the user taps a button.", "solution": true},
+   { "text": "The next line after present(_:animated:completion:)."},
+   { "text": "Inside the alert action’s handler closure."},
+   { "text": "At the end of the enclosing method or function."},
+        ],
+    },
+    //Question 22
+    {
+
+// Single Answer
+        "promptText": "Which system view controller is shown here?
+        <img style=\"margin-right: .5em;\" src=\"img/image8.png\" /> (Select the best answer.)",
+        "options": [
+   { "text": "UIShareController"},
+   { "text": "UIAlertController"},
+   { "text": "UIImagePickerController"},
+   { "text": "UIActivityViewController", "solution": true},
+   { "text": "CNContactViewController" },
+        ],
+    },
+    //Question 23
+    {
+
+// Single Answer
+        "promptText": "Which callback pattern does ( UIImagePickerController ) use to handle picked images? (Select the best answer.) ",
+        "options": [
+   { "text": "Closures"},
+   { "text": "Delegation", "solution": true},
+   { "text": "Notification Center"},
+   { "text": "Target/Action"},
+   { "text": "Key-Value Observing" },
+        ],
+    },
+    //Question 24
+    {
+
+// Single Answer
+        "promptText": "Which of the following is true when you use
+        ( tableView(_:heightForRowAt:) ) to dynamically size table view cells?(Select the best answer.) ",
+        "options": [
+   { "text": "tableView(_:heightForRowAt:) will be called only if the table view’s rowHeight is not set.","html": "( tableView(_:heightForRowAt:) ) will be called only if the table view’s rowHeight is not set."},
+   { "text": "( If implemented, tableView(_:heightForRowAt:) ) will be called for every cell,
+      and so must return quickly to minimize the impact on scroll peformance.", "solution": true},
+   { "text": "The default implementation of tableView(_:heightForRowAt:) returns 0.", "html": "The default implementation of ( tableView(_:heightForRowAt:) ) returns ( 0 )."},
+   { "text": "tableView(_:heightForRowAt:) must call the superclass implementation.", "html": "( tableView(_:heightForRowAt:) ) must call the superclass implementation."},
+   { "text": "Implementing tableView(_:heightForRowAt:) is more performant than relying on the table view’s rowHeight.", "html": "Implementing ( tableView(_:heightForRowAt:) ) is more performant than relying on the table view’s ( rowHeight )."},
+        ],
+    },
+     //Question 25
+    {
+
+// Multiple Answer
+        "promptText": "Which of the following are customization options for a date formatter? (Select three.) ",
+        "options": [
+   { "text": "Format of the time", "solution": true  },
+   { "text": "Whether to cache formatter results for future use" },
+   { "text": "Format of the date", "solution": true},
+   { "text": "Whether to output dates as Date or ( TimeInterval ) instances"},
+   { "text": "Which locale to use for formatting", "solution": true },
+        ],
+    },
+//Question 26
+    {
+
+// Single Answer
+        "promptText": "Which of the following is an example of an HTTP method?(Select the best answer.) ",
+        "options": [
+   { "text": "POST", "solution": true},
+   { "text": "/receivables/"},
+   { "text": "resume()"},
+   { "text": "JSON"},
+   { "text": "404" },
+        ],
+    },
+    //Question 27
+    {
+
+// Single Answer
+        "promptText": "( http://www.finance.pretendco.com:80/receivables/ar_january2017.pdf ) What is the URL’s path?(Select the best answer.) ",
+        "options": [
+   { "text": "ar_january2017.pdf"},
+   { "text": "/receivables/"},
+   { "text": "/receivables/ar_january2017.pdf", "solution": true},
+   { "text": "www.finance.pretendco.com"},
+   { "text": "www.finance.pretendco.com:80/receivables/ar_january2017.pdf" },
+        ],
+    },
+    //Question 28
+    {
+
+// Multiple Answer
+        "promptText": "What classes would you typically use in code that adds “?page_size=A4” to the end of a URL? (Select two.) ",
+        "options": [
+   { "text": "URLQueryItem", "solution": true  },
+   { "text": "URLComponents", "solution": true },
+   { "text": "URLRequest"},
+   { "text": "URLResourceKey"},
+   { "text": "URLProtocol"},
+        ],
+    },
+    //Question 29
+    {
+
+// Multiple Answer
+        "promptText": "A URL session data task’s completion handler must take three arguments. What are they? (Select three.) ",
+        "options": [
+   { "text": "Data?", "solution": true  },
+   { "text": "URLResponse?", "solution": true },
+   { "text": "Error?", "solution": true },
+   { "text": "URL?"},
+   { "text": "URLRequest?"},
+        ],
+    },
+//Question 30
+    {
+
+// Single Answer
+        "promptText": "Which of the following is the correct way to create a string representation of the data returned by a data task within a URL session?(Select the best answer.) ",
+        "options": [
+   { "text": "let str = String(data: data, encoding: .utf8)", "solution": true},
+   { "text": "let str = String(bytes: data, encoding: .utf8)"},
+   { "text": "let str = data.string(encoding: .utf8)"},
+   { "text": "let str = data.utf8String"},
+        ],
+    },
+    //Question 31
+    {
+
+// Single Answer
+        "promptText": "Review the following incomplete JSON snippet and then answer the question:( \"favorite_movies\": [ {\"title\": \"Finding Dory\", \"release_year\": 2016},{\"title\": \"Inside Out\",\"release_year\": 2015}} )Which compound Swift data type is this JSON’s structure closest to?(Select the best answer.) ",
+        "options": [
+   { "text": "[String:[[String:AnyObject]]]", "solution": true},
+   { "text": "[String:[String:AnyObject]]"},
+   { "text": "[[String:AnyObject]]"},
+   { "text": "[String:[[String:[AnyObject]]]]"},
+        ],
+    },
+    //Question 32
+    {
+
+// Multiple Answer
+        "promptText": "Which of the following types are representable as JSON? (Select three.)  ",
+        "options": [
+   { "text": "dictionary", "solution": true  },
+   { "text": "tuple"},
+   { "text": "set"},
+   { "text": "string", "solution": true },
+   { "text": "array", "solution": true },
+        ],
+    },
+    //Question 33
+    {
+
+// Single Answer
+        "promptText": "Which of the following is true of using ( JSONSerialization ) for decoding JSON?(Select the best answer.) ",
+        "options": [
+   { "text": "JSONSerialization automatically does its work on a background queue."},
+   { "text": "You create an instance of JSONSerialization when you need to encode or decode JSON."},
+   { "text": "jsonObject(with:) throws an error if the JSON data could not be decoded.", "solution": true},
+   { "text": "Despite its name, JSONSerialization can also decode XML." },
+        ],
+    },
+//Question 34
+    {
+
+// Single Answer
+        "promptText": "What does App Transport Security mean for your app?(Select the best answer.) ",
+        "options": [
+   { "text": "Web service requests must use HTTPS to keep communications safe.", "solution": true},
+   { "text": "To prevent fraud, you must code-sign your app before you upload it to Apple."},
+   { "text": "Streaming video must use HLS for secure streams."},
+   { "text": "To prevent third-party malicious code injection, Apple encrypts your app before it is downloaded from the App Store." },
+        ],
+    },
+    //Question 35
+    {
+
+// Single Answer
+        "promptText": "Which of the following is a best practice for apps that use web services? (Select the best answer.)",
+        "options": [
+   { "text": "To prevent a crash caused by lack of data, you should present a modal \"Wait\" view when you are waiting for web service results."},
+   { "text": "To prevent accidental use of stale data, you should disable the URL cache."},
+   { "text": "For code clarity, your URL session code should be in the action method of the control that initiates the request."},
+   { "text": "For a good user experience, you should show the network activity indicator when you have inflight requests that are waiting for
+     results.", "solution": true },
+        ],
+    },
+    //Question 36
+    {
+
+// Single Answer
+        "promptText": "Only one type of activity should be done on your app’s main thread. What is it? (Select the best answer.) ",
+        "options": [
+   { "text": "Saving and loading data on disk"},
+   { "text": "Business logic"},
+   { "text": "Managing network requests"},
+   { "text": "Updating and interacting with the user interface", "solution": true},
+   { "text": "Data manipulation and modeling" },
+        ],
+    },
+    //Question 37
+    {
+
+// Single Answer
+        "promptText": "Consider the following snippet and then answer the question:
+        ( let url = URL(string: \"https://www.apple.com\")!let task = URLSession.shared.dataTask(with: url) {(data: Data?, response: URLResponse?, error: Error?) inguard let data = data,let result = String(data: data, encoding: .utf8) else {return }self.textView.text = result} ) What is wrong with this code snippet?(Select the best answer.)",
+        "options": [
+   { "text": "The completion handler will execute in the background, so the UI update (textView.text assignment) should be wrapped in a call to DispatchQueue.main.async(…) to move it to the main queue.", "html": "The completion handler will execute in the background, so the UI update (( textView.text ) assignment) should be wrapped in a call to ( DispatchQueue.main.async(…) ) to move it to the main queue.", "solution": true},
+   { "text": "The completion closure has an incorrect signature; it should be (Data, URLResponse, Error) -> Void.", "html": "The completion closure has an incorrect signature; it should be ( (Data, URLResponse, Error) -> Void. )"},
+   { "text": "No force-unwrapping is necessary for the creation of url, so the ! can be deleted."},
+   { "text": "guard let data = data will emit a compiler error; a new local variable should be used instead of reusing data." , "html": "( guard let data = data ) will emit a compiler error; a new local variable should be used instead of reusing ( data )."},
+        ],
+    },
+    //Question 38
+    {
+
+// Single Answer
+        "promptText": "Which ( DispatchQueue ) method is the best to use for enqueuing one closure for execution on another queue, without waiting for it to return?(Select the best answer.) ",
+        "options": [
+   { "text": "sync(execute:)"},
+   { "text": "async(execute:)", "solution": true},
+   { "text": "asyncAfter(deadline:execute:)"},
+   { "text": "concurrentPerform(iterations:execute:)" },
+        ],
+    },
+    //Question 39
+    {
+
+// Multiple Answer
+        "promptText": "Which of the following are label properties that can be configured using the Attributes inspector? (Select three.) ",
+        "options": [
+   { "text": "Text font", "solution": true },
+   { "text": "Text color", "solution": true },
+   { "text": "Text encoding"},
+   { "text": "Current text", "solution": true },
+   { "text": "Text language" },
+        ],
+    },
+    //Question 40
+    {
+
+// Single Answer
+        "promptText": "A label's font can be specified in which Interface Builder inspector?(Select the best answer.)",
+        "options": [
+   { "text": "Size inspector" },
+   { "text": "Attributes inspector", "solution": true },
+   { "text": "Identity inspector"},
+   { "text": "Connections inspector" },
+   { "text": "File inspector" },
+        ],
+    },
+     //Question 41
+    {
+
+// Multiple Answer
+        "promptText": "Which content modes for an image view will always show the entire image without clipping it, regardless of the 'clipsToBounds' property of the image view? (Select all that apply.)",
+        "options": [
+   { "text": "Center" },
+   { "text": "Aspect Fit", "solution": true },
+   { "text": "Aspect Fill"},
+   { "text": "Scale to Fill", "solution": true },
+        ],
+    },
+    //Question 42
+    {
+
+// Single Answer
+        "promptText": "Consider the image view (outlined in blue) in the screenshot and then answer the question. <img style=\"margin-right: .5em;\" src=\"img/image1.png\" /> Which of an image view's properties affects whether the image is chopped off at the blue line or is allowed to draw outside the image view's area? (Select the best answer.)",
+        "options": [
+   { "text": "masksToBounds" },
+   { "text": "clipsToBounds", "solution": true },
+   { "text": "isBounded"},
+   { "text": "clippingRegion" },
+        ],
+    },
+     //Question 43
+    {
+
+// Multiple Answer
+        "promptText": "Which of the following are 'UIScrollView' subclasses? (Select all that apply.) ",
+        "options": [
+   { "text": "UIImageView" },
+   { "text": "UITableView", "solution": true },
+   { "text": "UICollectionView", "solution": true },
+   { "text": "UIStackView"},
+        ],
+    },
+    //Question 44
+    {
+
+// Single Answer
+        "promptText": "Which property of 'UIScrollView' indicates the distance, in points, that the scroll view has been scrolled? (Select the best answer.)",
+        "options": [
+   { "text": "contentSize" },
+   { "text": "contentProgress" },
+   { "text": "contentOffset", "solution": true},
+   { "text": "contentInset" },
+        ],
+    },
+    //Question 45
+    {
+
+// Single Answer
+        "promptText": "Which keyword decorates a property that refers to an object in a storyboard? (Select the best answer.) ",
+        "options": [
+   { "text": "@IBAction" },
+   { "text": "@IBDesignable" },
+   { "text": "@IBInspectable"},
+   { "text": "@IBOutlet", "solution": true},
+        ],
+    },
+    //Question 46
+    {
+
+// Single Answer
+        "promptText": "Suppose you use Interface Builder to add a button to an interface and add a new action method to your code. By default, what argument will the button pass to its action method? (Select the best answer.) ",
+        "options": [
+   { "text": "The UITouch instance that describes the user interaction." },
+   { "text": "The UIEvent instance that describes the touch event." },
+   { "text": "The default action method takes no arguments."},
+   { "text": "Itself.", "solution": true },
+        ],
+    },
+     //Question 47
+    {
+
+// Multiple Answer
+        "promptText": "Which of the following are customizable properties of a text field? (Select all that apply.) ",
+        "options": [
+   { "text": "The text on the keyboard's return key", "solution": true  },
+   { "text": "Whether the keyboard enables autocorrect", "solution": true },
+   { "text": "How the keyboard deals with capitalization", "solution": true },
+   { "text": "Whether to hide its contents by requiring a password", "solution": true },
+   { "text": "The text displayed when the field is empty", "solution": true },
+        ],
+    },
+     //Question 48
+    {
+
+// Multiple Answer
+        "promptText": "Which of the following are callback patterns that 'UITextField' supports for relaying text input events? (Select two.) ",
+        "options": [
+   { "text": "Delegation", "solution": true  },
+   { "text": "Key-Value Observing"},
+   { "text": "Target/Action", "solution": true },
+   { "text": "Closures"},
+   { "text": "Notification Center"},
+        ],
+    },
+    //Question 49
+    {
+
+// Single Answer
+        "promptText": "Review the screenshot and then answer the question. <img style=\"margin-right: .5em;\" src=\"img/image2.png\" /> Consider the Auto Layout constraints that affect the button in this screenshot. What is wrong with the layout?(Select the best answer.) ",
+        "options": [
+   { "text": "Nothing is wrong." },
+   { "text": "There are mutually unsatisfiable constraints, and one or more will be broken when the app runs, causing the button to move to the dotted box."},
+   { "text": "The view in the canvas is misplaced, and the dotted box shows where the button will be when the app runs.", "solution": true },
+   { "text": "The constraints are creating an ambiguous layout, so when the app runs, the button may appear anywhere between its shown location and the location of the dotted box." },
+        ],
+    },
+    //Question 50
+    {
+
+// Multiple Answer
+        "promptText": "Review the screenshot and then answer the question. <img style=\"margin-right: .5em;\" src=\"img/image3.png\" /> Consider the Auto Layout constraints that affect the button in this screenshot. Which of the following are true? (Select all that apply.)  ",
+        "options": [
+   { "text": "The button will change size if its superview changes size." },
+   { "text": "The button will change size if its text is changed.", "solution": true },
+   { "text": "The button will remain centered in its container.", "solution": true},
+   { "text": "The button has missing Auto Layout constraints." },
+        ],
+    },
+     //Question 51
+    {
+
+// Single Answer
+        "promptText": "When you add an Auto Layout constraint titled \"Center Vertically in Container\", what does \"container\" mean?(Select the best answer.) ",
+        "options": [
+   { "text": "The view's window" },
+   { "text": "The view's immediate superview", "solution": true },
+   { "text": "The view's nearest ancestor view that is a container of multiple views"},
+   { "text": "The view's nearest ancestor view that is the view of a view controller" },
+        ],
+    },
+     //Question 52
+    {
+
+// Single Answer
+        "promptText": "How do you know which attributes of a view or constraint can be varied between size classes in Interface Builder? (Select the best answer.) ",
+        "options": [
+   { "text": "They are indistinguishable from invariant attributes in the inspector." },
+   { "text": "They are listed once for each possible size class in the inspector." },
+   { "text": "They are collected in the \"Trait Variations\" group in the inspector."},
+   { "text": "They have a \"+\" button next to them in the inspector.", "solution": true },
+        ],
+    },
+     //Question 53
+    {
+
+// Single Answer
+        "promptText": "Review the screenshot and then answer the question. <img style=\"margin-right: .5em;\" src=\"img/image4.png\" /> What is the role of the circled button?(Select the best answer.)",
+        "options": [
+   { "text": "Create a new pin constraint." },
+   { "text": "Create a new alignment constraint." },
+   { "text": "Embed the selected view in a stack view."},
+   { "text": "Toggle the selected constraint on or off." },
+   { "text": "Resolve Auto Layout issues.", "solution": true},
+        ],
+    },
+     //Question 54
+    {
+
+// Multiple Answer
+        "promptText": "Which UIStackView properties are used to automatically manage the Auto Layout constraints between its arranged subviews?(Select three.) ",
+        "options": [
+   { "text": "distribution", "solution": true  },
+   { "text": "alignment", "solution": true },
+   { "text": "contentMode"},
+   { "text": "isHidden"},
+   { "text": "spacing", "solution": true },
+        ],
+    },
+    //Question 55
+    {
+
+// Single Answer
+        "promptText": "Consider a stack view arranged horizontally, as in this diagram: <img style=\"margin-right: .5em;\" src=\"img/image5.png\" /> Assuming the stack view did not resize its subviews, which distribution would achieve a layout as shown? (Select the best answer.) ",
+        "options": [
+   { "text": "fill" },
+   { "text": "fillEqually"},
+   { "text": "fillProportionally"},
+   { "text": "equalSpacing", "solution": true  },
+   { "text": "equalCentering" },
+        ],
+    },
+    //Question 56
+    {
+
+// Single Answer
+        "promptText": "In which situation should you use a navigation controller? (Select the best answer.) ",
+        "options": [
+   { "text": "You have only one view controller to show the user." },
+   { "text": "You have a flat organization of your view controllers so that the user can switch between them in any order."},
+   { "text": "You have a linear organization of your view controllers so that the user can swipe between them like the pages of a book."},
+   { "text": "You have a hierarchical organization of your view controllers so that the user can drill down through the app's scenes.", "solution": true  },
+        ],
+    },
+    //Question 57
+    {
+
+// Single Answer
+        "promptText": "Review the screenshot and answer the question. <img style=\"margin-right: .5em;\" src=\"img/image6.png\" /> What is the circled object called? (Select the best answer.) ",
+        "options": [
+   { "text": "Segue", "solution": true},
+   { "text": "Scene"},
+   { "text": "Segment"},
+   { "text": "Selector"},
+   { "text": "Switch" },
+        ],
+    },
+    //Question 58
+    {
+
+// Single Answer
+        "promptText": "Where should 'prepare(for:sender:)' be implemented when you create a segue between two view controllers?(Select the best answer.) ",
+        "options": [
+   { "text": "The source view controller", "solution": true },
+   { "text": "The destination view controller"},
+   { "text": "The container view controller"},
+   { "text": "The container view controller's delegate"},
+        ],
+    },
+    //Question 59
+    {
+
+// Single Answer
+        "promptText": "What is the name of the method called on the destination view controller of an unwind segue? (Select the best answer.)",
+        "options": [
+   { "text": "perform(unwindSegue:)" },
+   { "text": "perform(segue:)"},
+   { "text": "prepare(for:)"},
+   { "text": "prepare(forUnwind:)"},
+   { "text": "You can call it whatever you want.", "solution": true },
+        ],
+    },
+//Question 60
+    {
+
+// Single Answer
+        "promptText": "Consider this screenshot and then answer the question. <img style=\"margin-right: .5em;\" src=\"img/image7.png\" /> Which of the following would, within view controller code, clear the \"!\" from the tab bar item? (Select the best answer.)",
+        "options": [
+   { "text": "tabBarItem.badgeCount = 0"},
+   { "text": "tabBarItem.isError = false"},
+   { "text": "tabBarItem.badgeValue = nil", "solution": true},
+   { "text": "tabBarItem.badgeType = .none"},
+        ],
+    },
+     //Question 61
+    {
+
+// Multiple Answer
+        "promptText": "Which of the following are customizations of a tab bar item, as opposed to the tab bar controller that owns it? (Select three.)",
+        "options": [
+   { "text": "The item's title", "solution": true  },
+   { "text": "The item's index"},
+   { "text": "The action that is invoked when the tab bar item is tapped"},
+   { "text": "A string to show in a red badge on the item", "solution": true },
+   { "text": "The images to display when the item is selected and unselected", "solution": true },
+        ],
+    },
+     //Question 62
+    {
+
+// Single Answer
+        "promptText": "What will happen if you embed ten child view controllers in a tab bar controller, on an iPhone in portrait?(Select the best answer.) ",
+        "options": [
+   { "text": "A \"More\" button will be added to modally present a list of all view controllers past the fourth.", "solution": true},
+   { "text": "This is not possible; a UITabBarController can support only five child view controllers in this configuration."},
+   { "text": "The tab bar will automatically resize the tab bar items so that they all fit."},
+   { "text": "The tab bar will raise an exception and the app will crash."},
+        ],
+    },
+
+     //Question 63
+    {
+
+// Single Answer
+        "promptText": "Which lifecycle method of a view controller is called first? (Select the best answer.)",
+        "options": [
+   { "text": "viewDidLoad()", "solution": true},
+   { "text": "viewWillAppear(_:)"},
+   { "text": "viewWillDisappear(_:)"},
+   { "text": "viewDidAppear(_:)"},
+   { "text": "viewDidDisappear(_:)" },
+        ],
+    },
+//Question 64
+    {
+
+// Multiple Answer
+        "promptText": "What are the three main types of navigation hierarchies? (Select three.) ",
+        "options": [
+   { "text": "Hierarchical", "solution": true  },
+   { "text": "Flat", "solution": true },
+   { "text": "Content or experience driven", "solution": true },
+   { "text": "Linear"},
+   { "text": "Siloed"},
+        ],
+    },
+
+    //Question 65
+    {
+
+// Single Answer
+        "promptText": "Which document should you refer to for general advice about using modal as opposed to push segues? (Select the best answer.) ",
+        "options": [
+   { "text": "Human Interface Guidelines", "solution": true},
+   { "text": "App Store Review Guidelines"},
+   { "text": "UIKit API Diffs"},
+   { "text": "UIViewController class reference"},
+   { "text": "View Programming Guide" },
+        ],
+    },
+    //Question 66
+    {
+
+// Single Answer
+        "promptText": "Which lifecycle method will be called first if a phone call comes in? (Select the best answer.)",
+        "options": [
+   { "text": "applicationWillResignActive(_:)", "solution": true},
+   { "text": "applicationProtectedDataDidBecomeAvailable(_:)"},
+   { "text": "applicationDidEnterBackground(_:)"},
+   { "text": "application(_:willContinueUserActivityWithType:)"},
+   { "text": "application(_:didReceiveRemoteNotification:fetchCompletionHandler:)" },
+        ],
+    },
+    //Question 67
+    {
+
+// Single Answer
+        "promptText": "Which lifecycle method is the most appropriate for registering for push notifications? (Select the best answer.)",
+        "options": [
+   { "text": "application(_:didFinishLaunchingWithOptions:)", "solution": true},
+   { "text": "application(_:didRegister:)"},
+   { "text": "applicationDidBecomeActive(_:)"},
+   { "text": "applicationWillEnterForeground(_:)"},
+        ],
+    },
+    //Question 68
+    {
+
+// Single Answer
+        "promptText": "Which lifecycle method is the most appropriate for saving user data and application state information?(Select the best answer.) ",
+        "options": [
+   { "text": "applicationDidEnterBackground(_:)", "solution": true},
+   { "text": "applicationProtectedDataWillBecomeUnavailable(_:)"},
+   { "text": "applicationWillTerminate(_:)"},
+   { "text": "applicationDidReceiveMemoryWarning(_:)"},
+        ],
+    },
+//Question 69
+    {
+
+// Single Answer
+        "promptText": "What will the following code print to the console?( let greeting = \"Hello \"let name = \"Chris\"print (\"greeting + name\") )(Select the best answer.)",
+        "options": [
+   { "text": "\"Hello\""},
+   { "text": "\"Chris\""},
+   { "text": "\"Hello Chris\""},
+   { "text": "\"greeting + name\"", "solution": true},
+        ],
+    },
+//Question 70
+    {
+
+// Multiple Answer
+        "promptText": "Which of the following Swift features make it a safe language? (Select four.) ",
+        "options": [
+   { "text": "Explicit types", "solution": true  },
+   { "text": "Type inference", "solution": true },
+   { "text": "Error handling", "solution": true},
+   { "text": "Optionals", "solution": true},
+   { "text": "Dynamic runtime"},
+   { "text": "Header files"},
+   { "text": "Automatic type conversion"},
+        ],
+    },
+    //Question 71
+    {
+
+// Single Answer
+        "promptText": "Which of the following tools is designed for quickly prototyping Swift code?(Select the best answer.)",
+        "options": [
+   { "text": "Playgrounds", "solution": true},
+   { "text": "Safari"},
+   { "text": "Terminal"},
+   { "text": "Xcode"},
+        ],
+    },
+//Question 72
+    {
+
+// Multiple Answer
+        "promptText": "Consider this code snippet and then answer the question:( var names = [\"Alice\", \"Barry\", \"Chelsea\", \"Deepak\"]_________ {print(\"next!\")} )Which of the following should fill in the blank as valid syntax for looping over the names array? (Select two.) ",
+        "options": [
+   { "text": "for (int i = 0; i < names.count; i++)"},
+   { "text": "for (index, name) in names" },
+   { "text": "for (index, name) in names.enumerated()", "solution": true},
+   { "text": "for names.indices, names.values"},
+   { "text": "for name in names", "solution": true  },
+        ],
+    },
+//Question 73
+    {
+
+// Single Answer
+        "promptText": "Which keyword should you use to stop iterating a loop and execute the code outside the loop?(Select the best answer.) ",
+        "options": [
+   { "text": "break", "solution": true},
+   { "text": "continue"},
+   { "text": "return"},
+   { "text": "stop"},
+   { "text": "exit"},
+        ],
+    },
+//Question 74
+    {
+
+// Single Answer
+        "promptText": "When should you use an implicitly unwrapped optional variable?(Select the best answer.) ",
+        "options": [
+   { "text": "When its value is not known at initialization, but you can guarantee that it will have a value before it is used.", "solution": true},
+   { "text": "When its value is not known at initialization, but you will check it for nil before use."},
+   { "text": "When you want to decrease the number of times you force unwrap it throughout your code."},
+   { "text": "You should never use implicitly unwrapped optionals."},
+        ],
+    },
+    //Question 75
+    {
+
+// Single Answer
+        "promptText": "Consider this string declaration and then answer the question below:( var name: String? = \"Johnny Appleseed\" )Which of the following is the correct way to get the length of this string in characters?(Select the best answer.)",
+        "options": [
+   { "text": "var len = name.count"},
+   { "text": "var len = name?.count", "solution": true},
+   { "text": "var len = name?.count?"},
+        ],
+    },
+    //Question 76
+    {
+
+// Single Answer
+        "promptText": "Consider this string declaration and then answer the question below:( var name: String? = \"Johnny Appleseed\"var len = name?.characters.count )What is the inferred type of len in this example?(Select the best answer.)",
+        "options": [
+   { "text": "Int"},
+   { "text": "Int?", "solution": true},
+   { "text": "Int??"},
+   { "text": "This code will not compile."},
+        ],
+    },
+    //Question 77
+    {
+
+// Multiple Answer
+        "promptText": "Which of the following are valid ways to find out if an optional variable named someVar has a value? (Select two.) ",
+        "options": [
+   { "text": "if someVar == nil { … }", "solution": true  },
+   { "text": "if let unwrappedVar = someVar { … }", "solution": true },
+   { "text": "if someVar.hasValue { … }"},
+   { "text": "if let someVar { … }"},
+   { "text": "if hasValue(someVar) { … }"},
+        ],
+    },
+//Question 78
+    {
+
+// Single Answer
+        "promptText": "Consider this code snippet and then answer the following question:( A. var firstInteger: Int? = 0B. if let unwrappedFirstInteger = firstInteger {C. firstInteger = unwrappedFirstInteger + 1}D.  var nextInteger: Int? = firstInteger + 1 )If this code emits a compiler error, which line is at fault?(Select the best answer.) ",
+        "options": [
+   { "text": "A, because you cannot assign a literal integer to an optional variable."},
+   { "text": "B, because you cannot optionally bind a variable onto one with a different name."},
+   { "text": "C, because you cannot increment an optional integer."},
+   { "text": "D, because you cannot add an optional integer to a nonoptional integer.", "solution": true},
+   { "text": "None; this code will compile."},
+        ],
+    },
+    //Question 79
+    {
+
+// Single Answer
+        "promptText": "Which of the following is valid syntax, but will crash at runtime if someVar has no value?(Select the best answer.)",
+        "options": [
+   { "text": "if let unwrappedVar = someVar { … }"},
+   { "text": "if someVar != nil { … }"},
+   { "text": "let unwrappedVar = someVar?"},
+   { "text": "let unwrappedVar = someVar!", "solution": true},
+        ],
+    },
+    //Question 80
+    {
+
+// Single Answer
+        "promptText": "Which of the following is an example of optional binding?(Select the best answer.) ",
+        "options": [
+   { "text": "if let unwrappedVar = someVar { … }", "solution": true},
+   { "text": "if someVar != nil { … }"},
+   { "text": "let unwrappedVar = someVar?"},
+   { "text": "let unwrappedVar = someVar!"},
+        ],
+    },
+    //Question 81
+    {
+
+// Single Answer
+        "promptText": "Consider this code snippet, and then answer the following question:( class Circle {var radius: Doubleinit?(radius: Double) {self.radius = radiusif radius <= 0 {_______}}} )What should replace the blank above in order to give ( Circle ) a valid failable initializer? (Select the best answer.) ",
+        "options": [
+   { "text": "return nil", "solution": true},
+   { "text": "return"},
+   { "text": "fatalError()"},
+   { "text": "break"},
+        ],
+    },
+
+    //Question 82
+    {
+
+// Single Answer
+        "promptText": "Consider this code snippet and then answer the following question:( let powerLevel = 9001 )Which of the following is the correct way to check if ( powerLevel ) is an integer? (Select the best answer.)",
+        "options": [
+   { "text": "if powerLevel is Int {…}", "solution": true},
+   { "text": "if powerLevel as Int {…}"},
+   { "text": "if powerLevel as! Int {…}"},
+   { "text": "if powerLevel as? Int {…}"},
+   { "text": "if powerLevel.type is Int {…}"},
+        ],
+    },
+    //Question 83
+    {
+
+// Single Answer
+        "promptText": "Consider this code snippet and then answer the following question:( let powerLevel = 9001print(powerLevel as? String) )What will happen when you run this code?(Select the best answer.) ",
+        "options": [
+   { "text": "“9001” will print to the console."},
+   { "text": "“String(9001)” will print to the console."},
+   { "text": "“nil” will print to the console.", "solution": true},
+   { "text": "This code will cause a compiler error."},
+   { "text": "This code will crash at runtime."},
+        ],
+    },
+    //Question 84
+    {
+
+// Single Answer
+        "promptText": "Consider this code snippet and then answer the following question:( let powerLevel = 9001print(powerLevel as! String) )What will happen when you run this code? (Select the best answer.)",
+        "options": [
+   { "text": "“9001” will print to the console."},
+   { "text": "“String(9001)” will print to the console."},
+   { "text": "“nil” will print to the console."},
+   { "text": "This code will cause a compiler error."},
+   { "text": "This code will crash at runtime.", "solution": true},
+        ],
+    },
+
+    //Question 85
+    {
+
+// Single Answer
+        "promptText": "Consider this code snippet and then answer the following question:( func login(username: String?) -> Bool { _____ let user = username else { return false }print(\"Logging in as \(user)\")// TODO: Actually log inreturn true} )Which keyword should replace the blank to make this code compile? (Select the best answer.)",
+        "options": [
+   { "text": "if"},
+   { "text": "where"},
+   { "text": "guard", "solution": true},
+   { "text": "private"},
+   { "text": "Nothing; this code is already complete."},
+        ],
+    },
+//Question 86
+    {
+
+// Single Answer
+        "promptText": "If a Swift file declares a variable on its very first line, that variable is declared in what scope? (Select the best answer.)",
+        "options": [
+   { "text": "Global", "solution": true},
+   { "text": "Local"},
+   { "text": "Lexical"},
+   { "text": "Default"},
+   { "text": "Automatic"},
+        ],
+    },
+    //Question 87
+    {
+
+// Single Answer
+        "promptText": "Consider this code snippet and then answer the following question:( let pi = 3.14159func computeCircleArea(radius: Double) -> Double {let pi = 3.14let area = pi * radius * radiusreturn area}let result = computeCircleArea(radius: 1.0)print(result) )What is the result of executing this code? (Select the best answer.)",
+        "options": [
+   { "text": "“3.14” will print to the console.", "solution": true},
+   { "text": "“3.14159” will print to the console."},
+   { "text": "This code will cause a compiler error: invalid redeclaration of \"pi\"."},
+   { "text": "This code will crash at runtime."},
+        ],
+    },
+    //Question 88
+    {
+
+// Single Answer
+        "promptText": "Consider this struct and then answer the following question:( struct Circle {let radius: Doubleinit(radius: Double) {_____________}} )Which of the following should fill in the blank to complete the initializer, and why?(Select the best answer.)",
+        "options": [
+   { "text": "let radius = radius, to correctly shadow the argument with a local variable radius", "html": "( let radius = radius ), to correctly shadow the argument with a local variable ( radius )"},
+   { "text": "radius = radius, because the compiler will know which is the property radius and which is the argument radius","html": "( radius = radius ), because the compiler will know which is the property radius and which is the argument ( radius )"},
+   { "text": "self.radius = radius, to disambiguate between the property radius and the argument radius","html": "( self.radius = radius ), to disambiguate between the property ( radius ) and the argument ( radius )", "solution": true},
+   { "text": "Nothing; this initializer can be left empty."},
+        ],
+    },
+//Question 89
+    {
+
+// Single Answer
+        "promptText": "You want to create an enumeration to define possible movements:( enum mazeMovements {____ forward____ backward____ left____ right} )Which keyword should be used in place of the blanks to define the enumeration values?(Select the best answer.)",
+        "options": [
+   { "text": "value"},
+   { "text": "str"},
+   { "text": "option"},
+   { "text": "case", "solution": true},
+        ],
+    },
+    //Question 90
+    {
+
+// Single Answer
+        "promptText": "Consider this code snippet and then answer the following question:( enum Hand {case rightcase left}let scissorHand: Hand = .rightswitch scissorHand {case .right:print(\"I am right-handed.\")case .left:print(\"I am left-handed.\")} )What is the result of executing this code? (Select the best answer.)",
+        "options": [
+   { "text": "The compiler emits an error because there is no default case in the switch statement."},
+   { "text": "The compiler emits an error because the enumeration's cases do not have raw values."},
+   { "text": "The compiler emits an error because enum is not a valid keyword; enumeration should be used instead."},
+   { "text": "\"I am right-handed\" prints to the console", "solution": true},
+        ],
+    },
+    //Question 91
+    {
+
+// Single Answer
+        "promptText": "In Swift, protocols exist to:(Select the best answer.) ",
+        "options": [
+   { "text": "Enforce a consistent style in code written by multiple authors"},
+   { "text": "Define a set of rules for how instances of different types interact", "solution": true},
+   { "text": "Provide a bidirectional stream of data between two different objects"},
+   { "text": "Allow a developer to implement new keywords and behaviors in the Swift compiler"},
+        ],
+    },
+//Question 92
+    {
+
+// Single Answer
+        "promptText": "Consider the following function and then answer the question below:( func printResult(ofExecuting closure: ()->String) {let result = closure()print(result)} )Which one of the following calls to ( printResult(ofExecuting:) ) will emit a compiler error? (Select the best answer.)",
+        "options": [
+   { "text": "printResult {return \"Hello, World!\"}"},
+   { "text": "printResult() {return \"Hello, World!\"}"},
+   { "text": "printResult(ofExecuting: {\"Hello, World!\"})"},
+   { "text": "printResult(ofExecuting: ) {return \"Hello, World!\"}", "solution": true},
+   { "text": "printResult(ofExecuting: {()->String in return \"Hello, World!\"})"},
+        ],
+    },
+    //Question 93
+    {
+
+// Single Answer
+        "promptText": "What's wrong with this code snippet?( let strings = [\"Huzzah\", \"Hullabaloo\", \"Hello\"]let sorted = strings.sorted { (first, second) inreturn [first, second]} )(Select the best answer.)",
+        "options": [
+   { "text": "The closure passed to sorted(by:) must return a Boolean indicating whether first sorts before second.", "html": "The closure passed to ( sorted(by:) ) must return a Boolean indicating whether ( first ) sorts before ( second ).", "solution": true},
+   { "text": "The closure passed into sorted(by:) takes only one parameter and must return its sort index.","html": "The closure passed into ( sorted(by:) ) takes only one parameter and must return its sort index."},
+   { "text": "The call to sorted(by:) is missing the required by: parameter name.","html": "The call to ( sorted(by:) ) is missing the required ( by: ) parameter name."},
+   { "text": "The closure passed into sorted(by:) takes in two separate parameters, not a tuple of parameters.", "html": "The closure passed into ( sorted(by:) ) takes in two separate parameters, not a tuple of parameters."},
+   { "text": "Nothing; this code will compile and run without error."},
+        ],
+    },
+    //Question 94
+    {
+
+// Multiple Answer
+        "promptText": "Consider this code snippet and then answer the following question:( let strings = [\"Huzzah\", \"Hullabaloo\", \"Hello\"]let bigWords = strings.filter( _____ ) )Which of the following are valid closures that could be passed to the filter() function above to produce the output [\"Hullabaloo\"]? (Select three.) ",
+        "options": [
+   { "text": "{$0.characters.count > 6}", "solution": true  },
+   { "text": "{str in str.characters.count > 6}", "solution": true },
+   { "text": "{characters.count > 6}"},
+   { "text": "{for str in str.characters.count > 6}"},
+   { "text": "{(str: String) -> Bool in return str.characters.count > 6}", "solution": true},
+        ],
+    },
+    //Question 95
+    {
+
+// Multiple Answer
+        "promptText": "Consider this code snippet and then answer the following question:( let strings = [\"Huzzah\", \"Hullabaloo\", \"Hello\"]let letterCounts = strings.map( _____ ) )Which of the following are valid closures that could be passed to the ( map() ) function above to produce the output [6,10,5]? (Select three.) ",
+        "options": [
+   { "text": "{characters.count}" },
+   { "text": "{$0.characters.count}", "solution": true },
+   { "text": "{str in str.characters.count}", "solution": true },
+   { "text": "{for str in str.characters.count}"},
+   { "text": "{(str: String) -> Int in return str.characters.count}", "solution": true },
+        ],
+    },
+    //Question 96
+    {
+
+// Multiple Answer
+        "promptText": "When should you use an extension? (Select two.) ",
+        "options": [
+   { "text": "To organize code into logical chunks", "solution": true  },
+   { "text": "To replace implementations of methods on other types with your own"},
+   { "text": "To avoid having to break up a large and complex class into smaller ones"},
+   { "text": "To add stored properties to standard library types, so that passing data around is easier"},
+   { "text": "To add functionality to types you can't edit directly, such as those in the standard library", "solution": true },
+        ],
+    },
+    //Question 97
+    {
+
+// Single Answer
+        "promptText": "Which of the following is ( forbidden ) from being added to a type by using an extension?(Select the best answer.) ",
+        "options": [
+   { "text": "Computed properties."},
+   { "text": "Stored properties.", "solution": true},
+   { "text": "Instance methods."},
+   { "text": "Type methods."},
+   { "text": "Initializers."},
+        ],
+    },
+//Question 98
+    {
+
+// Multiple Answer
+        "promptText": "Which statements declare distance as a Double? (Select three.) ",
+        "options": [
+   { "text": "var distance: Double", "solution": true  },
+   { "text": "var distance = 30.Double" },
+   { "text": "var distance = 30"},
+   { "text": "var distance = Double(30)", "solution": true},
+   { "text": "var distance = Double"},
+   { "text": "var distance = 30.0", "solution": true},
+        ],
+    },
+    //Question 99
+    {
+
+// Single Answer
+        "promptText": "In the following line of code, which keyword should fill in the blank in order to declare ( someNumber ) as a constant?( _____ someNumber = 7 )(Select the best answer.)",
+        "options": [
+   { "text": "const"},
+   { "text": "var"},
+   { "text": "let", "solution": true},
+   { "text": "constant"},
+        ],
+    },
+    //Question 100
+    {
+
+// Single Answer
+        "promptText": "In the following line of code, which keyword should fill in the blank in order to declare ( someNumber ) as a variable?( _____ someNumber = 8 )(Select the best answer.)",
+        "options": [
+   { "text": "const"},
+   { "text": "var", "solution": true},
+   { "text": "let"},
+   { "text": "constant"},
+        ],
+    },
+    //Question 101
+    {
+
+// Single Answer
+        "promptText": "In the following sample code, which line will generate a compiler error?( A. let score = 100B. var goal = 10C. score += goalD. print(score) )(Select the best answer.)",
+        "options": [
+   { "text": "let score = 100"},
+   { "text": "var goal = 10"},
+   { "text": "score += goal", "solution": true},
+   { "text": "print(score)"},
+        ],
+    },
+    //Question 102
+    {
+
+// Single Answer
+        "promptText": "In the following statement, ( rate ) is defined as what type?( let rate = 21.3 )(Select the best answer.)",
+        "options": [
+   { "text": "Int"},
+   { "text": "Double", "solution": true},
+   { "text": "Bool"},
+   { "text": "String"},
+        ],
+    },
+    //Question 103
+    {
+
+// Single Answer
+        "promptText": "In the following statement, ( myScore ) is defined as what type?( let myScore = 99 )(Select the best answer.)",
+        "options": [
+   { "text": "Int", "solution": true},
+   { "text": "Double"},
+   { "text": "Bool"},
+   { "text": "String"},
+        ],
+    },
+    //Question 104
+    {
+
+// Single Answer
+        "promptText": "In the following statement, ( animal  ) is defined as what type?( let animal  = \"Zebra\" )(Select the best answer.)",
+        "options": [
+   { "text": "Int"},
+   { "text": "Double"},
+   { "text": "Bool"},
+   { "text": "String", "solution": true},
+        ],
+    },
+    //Question 105
+    {
+
+// Single Answer
+        "promptText": "In the following statement, ( payout ) is defined as what type?( let payout = totalScore >= 100 )(Select the best answer.)",
+        "options": [
+   { "text": "Int"},
+   { "text": "Double"},
+   { "text": "Bool", "solution": true},
+   { "text": "String"},
+        ],
+    },
+    //Question 106
+    {
+
+// Multiple Answer
+        "promptText": "Which of the following are valid comment lines? (Select two.) ",
+        "options": [
+   { "text": "# This is a comment" },
+   { "text": "// This is a comment", "solution": true },
+   { "text": "% This is a comment %"},
+   { "text": "<!--This is a comment -->"},
+   { "text": "/* This is a comment */", "solution": true },
+        ],
+    },
+    //Question 107
+    {
+
+// Single Answer
+        "promptText": "Which is the correct way to format the number 123857209833 so that it is easer to read within Swift code? (Select the best answer.)",
+        "options": [
+   { "text": "123 857 209 833"},
+   { "text": "123,857,209,833"},
+   { "text": "123_857_209_833", "solution": true},
+   { "text": "123.857.209.833"},
+        ],
+    },
+    //Question 108
+    {
+
+// Single Answer
+        "promptText": "Which of the following statements will increment the variable ( myScore ) by 1 in Swift?(Select the best answer.) ",
+        "options": [
+   { "text": "myScore++"},
+   { "text": "++myScore"},
+   { "text": "myScore += 1", "solution": true},
+   { "text": "myScore.increment(1)"},
+        ],
+    },
+    //Question 109
+    {
+
+// Single Answer
+        "promptText": "Your Swift program has two variables: a Double named ( doubleValue ) and an Int named ( intValue ). Which of the following statements allows the two values to be added together?(Select the best answer.) ",
+        "options": [
+   { "text": "let total = doubleValue + intValue"},
+   { "text": "let total = doubleValue + Double(intValue)", "solution": true},
+   { "text": "let total = doubleValue.addInt(intValue)"},
+   { "text": "let total = doubleValue.add(intValue)"},
+   { "text": "let total = doubleValue + intValue.double" },
+        ],
+    },
+    //Question 110
+    {
+
+// Single Answer
+        "promptText": "What is the output from the following statement?( print (4 + 3 * 2 + 6 / 2) )(Select the best answer.)",
+        "options": [
+   { "text": "10"},
+   { "text": "13", "solution": true},
+   { "text": "17"},
+   { "text": "28"},
+        ],
+    },
+//Question 111
+    {
+
+// Single Answer
+        "promptText": "What is the output from the following statement?( var time = 24if time > 4 && time < 12 {print(\"Good morning!\")} ___ time <= 18 {print(\"Good afternoon.\")} else {print(\"Good evening\")}What should fill in the blank to make this code compile without error?  )(Select the best answer.)",
+        "options": [
+   { "text": "else"},
+   { "text": "if"},
+   { "text": "else if", "solution": true},
+   { "text": "elseif"},
+   { "text": "elif" },
+        ],
+    },
+//Question 112
+    {
+
+// Single Answer
+        "promptText": "What will be the result of building and running this code?( var time = 24if time > 4 && time < 12  {print(\"Good morning!\")} if time <= 18 {print(\"Good afternoon.\")} else {print(\"Good evening\")}What should fill in the blank to make this code compile without error?  )(Select the best answer.)",
+        "options": [
+   { "text": "\"Good morning\" will print to the console.", "html": "( \"Good morning\" ) will print to the console."},
+   { "text": "\"Good afternoon\" will print to the console.", "html": "\"Good afternoon\" will print to the console."},
+   { "text": "\"Good evening\" will print to the console.", "html": "\"Good evening\" will print to the console."},
+   { "text": "This code will not compile.", "solution": true},
+   { "text": "This code will crash at runtime." },
+        ],
+    },
+    //Question 113
+    {
+
+// Multiple Answer
+        "promptText": "Which of the following returns ( true ) if both ( condition1 ) and ( condition2 ) are true? (Select two.)  ",
+        "options": [
+   { "text": "condition1 && condition2", "html": "( condition1 && condition2 )", "solution": true  },
+   { "text": "condition1 & condition2", "html": "( condition1 & condition2 )"},
+   { "text": "condition1 || condition2", "html": "( condition1 || condition2 )", "solution": true },
+   { "text": "condition1 | condition2", "html": "( condition1 | condition2 )"},
+   { "text": "condition1 % condition2", "html": "( condition1 % condition2 )"},
+        ],
+    },
+    //Question 114
+    {
+
+// Single Answer
+        "promptText": "Which expression returns ( true ) if ( condition1 ) is true and ( condition2 ) is false?(Select the best answer.) ",
+        "options": [
+   { "text": "condition1 && condition2", "html": "( condition1 && condition2 )"},
+   { "text": "condition1 & condition2", "html": "( condition1 & condition2 )"},
+   { "text": "condition1 || condition2", "html": "( condition1 || condition2 )", "solution": true },
+   { "text": "condition1 | condition2", "html": "( condition1 | condition2 )"},
+   { "text": "condition1 % condition2", "html": "( condition1 % condition2 )"},
+        ],
+    },
+    //Question 115
+    {
+
+// Single Answer
+        "promptText": "Review the following code sample and answer the question below.( let numberOfWheels = 2switch numberOfWheels {case 1:print(\"Unicycle\")breakcase 2:print(\"Bicycle\")case 3:print(\"Tricycle\") )Will the above code compile, and if not, why? (Select the best answer.)",
+        "options": [
+   { "text": "Yes, the code will compile with no errors."},
+   { "text": "No, the code will not compile, because it is missing break statements."},
+   { "text": "No, the code will not compile, because the switch statement is not exhaustive.", "solution": true},
+   { "text": "No, the code will not compile, because there are no parentheses around the condition."},
+        ],
+    },
+
+
+    //Question 116
+    {
+
+// Single Answer
+        "promptText": "What will print to the console if you execute this code?( print(\"I put \\\"\\\\\\\" in your string!\") )(Select the best answer.)",
+        "options": [
+   { "text": "I put \\ in your string!"},
+   { "text": "I put \"\\\" in your string!", "solution": true},
+   { "text": "I put \"\\\\\" in your string!"},
+   { "text": "I put \\\"\\\\\\\" in your string!"},
+        ],
+    },
+
+//Question 117
+    {
+
+// Multiple Answer
+        "promptText": "Consider this string declaration and answer the question below:( var name: String = \"Johnny Appleseed\" )Which of the following are valid ways to determine if name is an empty string? (Select two.)  ",
+        "options": [
+   { "text": "name.isEmpty"},
+   { "text": "name.characters.isEmpty", "solution": true },
+   { "text": "name == nil"},
+   { "text": "name == \"\"", "solution": true },
+   { "text": "isEmpty(name)"},
+        ],
+    },
+    //Question 118
+    {
+
+// Single Answer
+        "promptText": "Which of the following ways to print \"Hello, World!\" to the console will emit a compiler error?(Select the best answer.)",
+        "options": [
+   { "text": "print(\"Hello,\" \"World\")", "solution": true},
+   { "text": "print(\"Hello,\", \"World!\")"},
+   { "text": "print(\"Hello, \" + \"World!\")"},
+   { "text": "print(\"Hello, \".appending(\"World!\"))"},
+        ],
+    },
+    //Question 119
+    {
+
+// Single Answer
+        "promptText": "Which of the following statements compares two strings, named ( firstString ) and ( secondString ), for case-sensitive equality?(Select the best answer.) ",
+        "options": [
+   { "text": "firstString = secondString"},
+   { "text": "firstString == secondString", "solution": true},
+   { "text": "firstString.isEqual(secondString)"},
+   { "text": "strcmp(firstString,secondString)"},
+        ],
+    },
+    //Question 120
+    {
+
+// Single Answer
+        "promptText": "Given a constant named studentName with a value of \"John\" and a constant named testScore with a value of 87, which statement in Swift would produce the following output?( John got 87 on the exam. )(Select the best answer.)",
+        "options": [
+   { "text": "print(studentName + \" got \" + testScore + \" on the exam.\")"},
+   { "text": "print(\"\(studentName) got \(testScore) on the exam.\")", "solution": true},
+   { "text": "print(\"%s got %i on the exam.\", studentName, testScore)"},
+   { "text": "print(\"${studentName} got ${testScore} on the exam.\")"},
+        ],
+    },
+    //Question 121
+    {
+
+// Single Answer
+        "promptText": "If a string named ( animals ) contains the word \"cow\", which of the following is a valid expression that would return ( true )? (Select the best answer.)",
+        "options": [
+   { "text": "animals.contains(\"cow\")", "solution": true},
+   { "text": "(\"cow\" in animals)"},
+   { "text": "animals.includes(\"cow\")"},
+   { "text": "animals.find(\"cow\")"},
+        ],
+    },
+    //Question 122
+    {
+
+// Multiple Answer
+        "promptText": "Which of the following functions returns a value? (Select two.) ",
+        "options": [
+   { "text": "func move(_ player: String, to team: String)" },
+   { "text": "func move(_ player: String, to team: String) -> Void" },
+   { "text": "func move(_ player: String, to team: String) -> Bool", "solution": true },
+   { "text": "func move(_ player: String, to team: String) -> ()"},
+   { "text": "func move(_ player: String, to team: String) -> Bool?", "solution": true},
+        ],
+    },
+    //Question 123
+    {
+
+// Single Answer
+        "promptText": "Review the following code snippet and answer the question below:( func retire(player retiree: String) {//...} )Which is the correct syntax for calling this function?(Select the best answer.)",
+        "options": [
+   { "text": "retire(player: \"Mikey\")", "solution": true},
+   { "text": "retire(retiree: \"Mikey\")"},
+   { "text": "retire(\"Mikey\")"},
+   { "text": "retire(player retiree: \"Mikey\")"},
+        ],
+    },
+    //Question 124
+    {
+
+// Single Answer
+        "promptText": "Review the following code snippet and answer the question below:( func retire(_ playerToRemove: String) {//...} )Which is the correct syntax for calling this function?(Select the best answer.)",
+        "options": [
+   { "text": "retire(\"Mikey\")", "solution": true},
+   { "text": "retire(_: \"Mikey\")"},
+   { "text": "retire(playerToRemove: \"Mikey\")"},
+   { "text": "retire(_ playerToRemove: \"Mikey\")"},
+        ],
+    },
+    //Question 125
+    {
+
+// Single Answer
+        "promptText": "Which of the following is a valid way to define a function that takes in a string with a default value?(Select the best answer.) ",
+        "options": [
+   { "text": "func setDefaultCity(_ newDefault: String: \"Atlantis\")"},
+   { "text": "func setDefaultCity(_ newDefault: String default: \"Atlantis\")"},
+   { "text": "func setDefaultCity(_ newDefault: String = \"Atlantis\")", "solution": true},
+   { "text": "func setDefaultCity(_ newDefault = \"Atlantis\")"},
+        ],
+    },
+//Question 126
+    {
+
+// Single Answer
+        "promptText": "Consider the code snippet below and then answer the question:( struct Town {____ let maxPopulation = 9000var population = 0}var myTown = Town()myTown.population = 512let isOverPopulated = Town.maxPopulation > myTown.population )Which keyword should fill in the blank so that the above code compiles? (Select the best answer.) ",
+        "options": [
+   { "text": "static", "solution": true},
+   { "text": "type"},
+   { "text": "class"},
+   { "text": "private"},
+   { "text": "mutating"},
+        ],
+    },
+    //Question 127
+    {
+
+// Single Answer
+        "promptText": "Consider the code snippet below and then answer the question:( struct Acceleration {static let gravity = 9.8let x: Double = 0, y: Double = 0, z: Double = 0}let a = Acceleration() )Which of the following is the correct way to access the value of ( gravity )? (Select the best answer.)",
+        "options": [
+   { "text": "let g = Acceleration.self.gravity"},
+   { "text": "let g = a.gravity"},
+   { "text": "let g = Acceleration.gravity", "solution": true},
+   { "text": "let g = gravity"},
+        ],
+    },
+//Question 128
+    {
+
+// Single Answer
+        "promptText": "Consider the following structure definition, and then answer the question below:( struct IndexedString: String {var identifier: Stringvar index: Int = 0var nextIndex: Int {return index + 1}} )Will this code compile, and if not, why not? (Select the best answer.)",
+        "options": [
+   { "text": "Yes, this code will compile without error."},
+   { "text": "No, a structure without initializers must have default values for all properties."},
+   { "text": "No, structures do not support inheritance.", "solution": true},
+   { "text": "No, structures cannot have computed properties."},
+        ],
+    },
+    //Question 129
+    {
+
+// Single Answer
+        "promptText": "Consider this structure definition and then answer the question.( struct HumanBody {var heightInMeters: Doublevar weightInKilos: Double} )Which of the following is a valid way to create an instance of ( HumanBody )?(Select the best answer.) ",
+        "options": [
+   { "text": "var body = HumanBody()"},
+   { "text": "var body = HumanBody(2.0, 80)"},
+   { "text": "var body = HumanBody(heightInMeters: 2.0, weightInKilos: 80)", "solution": true},
+   { "text": "var body = HumanBody(heightInMeters: 2.0)"},
+        ],
+    },
+    //Question 130
+    {
+
+// Single Answer
+        "promptText": "Consider the following structure and then answer the question:( struct HumanBody {var heightInMeters: Double = 1.8var weightInKilos: Double = 75_____ func gainWeight(kilos: Double) {weightInKilos += kilos}} )What keyword should be used in the blank above in order to make this code compile?(Select the best answer.)",
+        "options": [
+   { "text": "mutating", "solution": true},
+   { "text": "variable"},
+   { "text": "public"},
+   { "text": "mutable"},
+   { "text": "No keyword is required; this code will compile."},
+        ],
+    },
+    //Question 131
+    {
+
+// Multiple Answer
+        "promptText": "Consider this structure and then answer the question about its four initializers:( struct Person {var name: StringA.  init() {name = \"Johnny Appleseed\"}B.  init(name: String) {name = name}C.  init(firstName: String, lastName: String) {name = \"\(firstName) \(lastName)\"}D.  init {name = \"Johnny Appleseed\"} )Which TWO of the above initializers will cause compiler errors? (Select two.)",
+        "options": [
+   { "text": "A" },
+   { "text": "B", "solution": true },
+   { "text": "C"},
+   { "text": "D", "solution": true },
+        ],
+    },
+    //Question 132
+    {
+
+// Multiple Answer
+        "promptText": "Consider this structure and then answer the question:( struct Person {var name = \"Johnny Appleseed\"var dateOfBirth = Date(timeIntervalSince1970: 0)var ageInSeconds: Int {return -Int(dateOfBirth.timeIntervalSinceNow)}} )Which of the following are true about ( ageInSeconds )? (Select two.)",
+        "options": [
+   { "text": "It is a property observer."},
+   { "text": "It is a type property."},
+   { "text": "It is a stored property."},
+   { "text": "It is a computed property.", "solution": true },
+   { "text": "It is an instance property.", "solution": true  },
+        ],
+    },
+
+    //Question 133
+    {
+
+// Multiple Answer
+        "promptText": "Which of the following are differences between structures and classes? (Select three.) ",
+        "options": [
+   { "text": "Structures are passed by value and classes are passed by reference.", "solution": true  },
+   { "text": "Classes have inheritance and structures do not.", "solution": true },
+   { "text": "Structures can have compiler-synthesized memberwise initializers, and classes never do.", "solution": true },
+   { "text": "Classes cannot have type properties, but structures can."},
+   { "text": "Structures cannot have methods that change their properties, but classes can."},
+   { "text": "Structures take up more space in memory than classes."},
+        ],
+    },
+    //Question 134
+    {
+
+// Single Answer
+        "promptText": "Consider this code snippet and then answer the question below:( class Town {var name: String = \"Podunk\"var population: Int = 0}}let myTown = Town()myTown.population = 42let yourTown = myTownyourTown.population = 9000print(myTown.population) )What will print to the console?(Select the best answer.)",
+        "options": [
+   { "text": "0"},
+   { "text": "42"},
+   { "text": "9000", "solution": true},
+   { "text": "Nothing; this code will not compile."},
+        ],
+    },
+    //Question 135
+    {
+
+// Single Answer
+        "promptText": "Consider this code snippet and then answer the question below:( struct Town {var name: String = \"Podunk\"var population: Int = 0}var myTown = Town()myTown.population = 42var yourTown = myTownyourTown.population = 9000print(myTown.population) )What will print to the console?(Select the best answer.)",
+        "options": [
+   { "text": "0"},
+   { "text": "42", "solution": true},
+   { "text": "9000"},
+   { "text": "Nothing; this code will not compile."},
+        ],
+    },
+    //Question 136
+    {
+
+// Single Answer
+        "promptText": "What is the correct way to declare a class Car that is a subclass of a class named ( Vehicle? )(Select the best answer.)",
+        "options": [
+   { "text": "class Car: Vehicle { … }", "solution": true},
+   { "text": "class Car, Vehicle { … }"},
+   { "text": "class Car <Vehicle> { … }"},
+   { "text": "class Car subclasses Vehicle { … }"},
+   { "text": "class Car extends Vehicle { … }"},
+        ],
+    },
+    //Question 137
+    {
+
+// Multiple Answer
+        "promptText": "Given this class definition, which of the following are true? ( class Person {var name: Stringvar dateOfBirth: Date}class Employee: Person {var employeeID: Int} )(Select two.)",
+        "options": [
+   { "text": "Person is a base class.","html": "( Person ) is a base class.", "solution": true  },
+   { "text": "Employee is a base class.","html": "( Employee ) is a base class."},
+   { "text": "URLReqPerson is a subclass of Employee.uest","html": "( Person ) is a subclass of ( Employee )."},
+   { "text": "Employee is a subclass of Person.","html": "( Employee ) is a subclass of ( Person ).", "solution": true },
+   { "text": "Person is an abstract class.","html": "( Person ) is an abstract class."},
+   { "text": "Employee is an abstract class.","html": "( Employee ) is an abstract class."},
+        ],
+    },
+    //Question 138
+    {
+
+// Multiple Answer
+        "promptText": "When should you use a class instead of a structure for a new type? (Select three.)",
+        "options": [
+   { "text": "When you're working with a framework that uses classes.", "solution": true  },
+   { "text": "When you want to refer to the same instance of a type in multiple places.", "solution": true },
+   { "text": "When the relationships you want to model require inheritance.", "solution": true },
+   { "text": "When you want to make your app take up less space."},
+   { "text": "You should start with a class, and use a structure only if you must."},
+   { "text": "When you want to make your type's properties easy to mutate."},
+        ],
+    },
+//Question 139
+    {
+
+// Multiple Answer
+        "promptText": "Which of the following are valid ways to add a key/value pair to a dictionary? (Select two.)",
+        "options": [
+   { "text": "myDictionary[someKey] = someValue", "solution": true  },
+   { "text": "myDictionary.append(someValue, forKey: someKey)" },
+   { "text": "myDictionary.updateValue(someValue, forKey: someKey)", "solution": true},
+   { "text": "myDictionary.append(someKey, someValue)"},
+   { "text": "myDictionary.setValue(someValue, forKey: someKey)"},
+        ],
+    },
+    //Question 140
+    {
+
+// Multiple Answer
+        "promptText": "Which of the following are valid ways to remove a key/value pair from a dictionary? (Select two.)",
+        "options": [
+   { "text": "names.removeValue(forKey: someKey)", "solution": true  },
+   { "text": "names.remove(key: someKey)"},
+   { "text": "names[someKey].remove()"},
+   { "text": "names[someKey] = nil", "solution": true },
+   { "text": "names.delete(someKey)"},
+        ],
+    },
+//Question 141
+    {
+
+// Multiple Answer
+        "promptText": "Which of the following are valid ways to create an array of strings? (Select three.) ",
+        "options": [
+   { "text": "var myArray: [String] = []", "solution": true  },
+   { "text": "var myArray: Array<String> = []", "solution": true },
+   { "text": "var myArray: Array(String) = []"},
+   { "text": "var myArray = [String]"},
+   { "text": "var myArray = [String]()", "solution": true },
+   { "text": "var myArray = Array(of: String)"},
+        ],
+    },
+    //Question 142
+    {
+
+// Single Answer
+        "promptText": "Which property of an array will tell you how many items it contains?(Select the best answer.) ",
+        "options": [
+   { "text": "size"},
+   { "text": "count", "solution": true},
+   { "text": "length"},
+   { "text": "indices"},
+   { "text": "numberOfItems"},
+        ],
+    },
+    //Question 143
+    {
+
+// Multiple Answer
+        "promptText": "Which of the following are valid ways to add a new item to the end of an array? (Select two.) ",
+        "options": [
+   { "text": "myArray.append(newItem)", "solution": true  },
+   { "text": "myArray += newItem"},
+   { "text": "myArray.add(newItem)"},
+   { "text": "myArray.insert(newItem, at: myArray.count)", "solution": true },
+   { "text": "myArray.push(newItem)"},
+        ],
+    }
+  ] }
