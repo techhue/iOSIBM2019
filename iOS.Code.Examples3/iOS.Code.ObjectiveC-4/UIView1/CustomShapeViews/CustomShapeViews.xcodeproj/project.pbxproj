@@ -1,0 +1,318 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		034C088F1998E4E000CC6C79 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034C088E1998E4E000CC6C79 /* UIKit.framework */; };
+		034C08911998E4E000CC6C79 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034C08901998E4E000CC6C79 /* Foundation.framework */; };
+		034C08931998E4E000CC6C79 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034C08921998E4E000CC6C79 /* CoreGraphics.framework */; };
+		034C08991998E4E000CC6C79 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 034C08971998E4E000CC6C79 /* InfoPlist.strings */; };
+		034C089B1998E4E000CC6C79 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 034C089A1998E4E000CC6C79 /* main.m */; };
+		034C089F1998E4E000CC6C79 /* CSVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 034C089E1998E4E000CC6C79 /* CSVAppDelegate.m */; };
+		034C08A11998E4E000CC6C79 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 034C08A01998E4E000CC6C79 /* Default.png */; };
+		034C08A31998E4E000CC6C79 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 034C08A21998E4E000CC6C79 /* Default@2x.png */; };
+		034C08A51998E4E000CC6C79 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 034C08A41998E4E000CC6C79 /* Default-568h@2x.png */; };
+		034C08AE1998E50600CC6C79 /* CSVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034C08AD1998E50600CC6C79 /* CSVViewController.m */; };
+		034C08B01998E52000CC6C79 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034C08AF1998E52000CC6C79 /* QuartzCore.framework */; };
+		034C08B31998E9DC00CC6C79 /* CSVTraingleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 034C08B21998E9DC00CC6C79 /* CSVTraingleView.m */; };
+		034C08B61998ECD000CC6C79 /* CSVCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 034C08B51998ECD000CC6C79 /* CSVCircleView.m */; };
+		034C08B91998EE9300CC6C79 /* CSVOctagonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 034C08B81998EE9300CC6C79 /* CSVOctagonView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		034C088B1998E4E000CC6C79 /* CustomShapeViews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomShapeViews.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		034C088E1998E4E000CC6C79 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		034C08901998E4E000CC6C79 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		034C08921998E4E000CC6C79 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		034C08961998E4E000CC6C79 /* CustomShapeViews-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CustomShapeViews-Info.plist"; sourceTree = "<group>"; };
+		034C08981998E4E000CC6C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		034C089A1998E4E000CC6C79 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		034C089C1998E4E000CC6C79 /* CustomShapeViews-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CustomShapeViews-Prefix.pch"; sourceTree = "<group>"; };
+		034C089D1998E4E000CC6C79 /* CSVAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSVAppDelegate.h; sourceTree = "<group>"; };
+		034C089E1998E4E000CC6C79 /* CSVAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSVAppDelegate.m; sourceTree = "<group>"; };
+		034C08A01998E4E000CC6C79 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		034C08A21998E4E000CC6C79 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		034C08A41998E4E000CC6C79 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		034C08AC1998E50600CC6C79 /* CSVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSVViewController.h; sourceTree = "<group>"; };
+		034C08AD1998E50600CC6C79 /* CSVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSVViewController.m; sourceTree = "<group>"; };
+		034C08AF1998E52000CC6C79 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		034C08B11998E9DC00CC6C79 /* CSVTraingleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSVTraingleView.h; sourceTree = "<group>"; };
+		034C08B21998E9DC00CC6C79 /* CSVTraingleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSVTraingleView.m; sourceTree = "<group>"; };
+		034C08B41998ECD000CC6C79 /* CSVCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSVCircleView.h; sourceTree = "<group>"; };
+		034C08B51998ECD000CC6C79 /* CSVCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSVCircleView.m; sourceTree = "<group>"; };
+		034C08B71998EE9300CC6C79 /* CSVOctagonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSVOctagonView.h; sourceTree = "<group>"; };
+		034C08B81998EE9300CC6C79 /* CSVOctagonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSVOctagonView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		034C08881998E4E000CC6C79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				034C08B01998E52000CC6C79 /* QuartzCore.framework in Frameworks */,
+				034C088F1998E4E000CC6C79 /* UIKit.framework in Frameworks */,
+				034C08911998E4E000CC6C79 /* Foundation.framework in Frameworks */,
+				034C08931998E4E000CC6C79 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034C08821998E4E000CC6C79 = {
+			isa = PBXGroup;
+			children = (
+				034C08941998E4E000CC6C79 /* CustomShapeViews */,
+				034C088D1998E4E000CC6C79 /* Frameworks */,
+				034C088C1998E4E000CC6C79 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		034C088C1998E4E000CC6C79 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				034C088B1998E4E000CC6C79 /* CustomShapeViews.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		034C088D1998E4E000CC6C79 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				034C08AF1998E52000CC6C79 /* QuartzCore.framework */,
+				034C088E1998E4E000CC6C79 /* UIKit.framework */,
+				034C08901998E4E000CC6C79 /* Foundation.framework */,
+				034C08921998E4E000CC6C79 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		034C08941998E4E000CC6C79 /* CustomShapeViews */ = {
+			isa = PBXGroup;
+			children = (
+				034C089D1998E4E000CC6C79 /* CSVAppDelegate.h */,
+				034C089E1998E4E000CC6C79 /* CSVAppDelegate.m */,
+				034C08951998E4E000CC6C79 /* Supporting Files */,
+				034C08AC1998E50600CC6C79 /* CSVViewController.h */,
+				034C08AD1998E50600CC6C79 /* CSVViewController.m */,
+				034C08B11998E9DC00CC6C79 /* CSVTraingleView.h */,
+				034C08B21998E9DC00CC6C79 /* CSVTraingleView.m */,
+				034C08B41998ECD000CC6C79 /* CSVCircleView.h */,
+				034C08B51998ECD000CC6C79 /* CSVCircleView.m */,
+				034C08B71998EE9300CC6C79 /* CSVOctagonView.h */,
+				034C08B81998EE9300CC6C79 /* CSVOctagonView.m */,
+			);
+			path = CustomShapeViews;
+			sourceTree = "<group>";
+		};
+		034C08951998E4E000CC6C79 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				034C08961998E4E000CC6C79 /* CustomShapeViews-Info.plist */,
+				034C08971998E4E000CC6C79 /* InfoPlist.strings */,
+				034C089A1998E4E000CC6C79 /* main.m */,
+				034C089C1998E4E000CC6C79 /* CustomShapeViews-Prefix.pch */,
+				034C08A01998E4E000CC6C79 /* Default.png */,
+				034C08A21998E4E000CC6C79 /* Default@2x.png */,
+				034C08A41998E4E000CC6C79 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		034C088A1998E4E000CC6C79 /* CustomShapeViews */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 034C08A81998E4E000CC6C79 /* Build configuration list for PBXNativeTarget "CustomShapeViews" */;
+			buildPhases = (
+				034C08871998E4E000CC6C79 /* Sources */,
+				034C08881998E4E000CC6C79 /* Frameworks */,
+				034C08891998E4E000CC6C79 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CustomShapeViews;
+			productName = CustomShapeViews;
+			productReference = 034C088B1998E4E000CC6C79 /* CustomShapeViews.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		034C08831998E4E000CC6C79 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CSV;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "TechHue Systems";
+			};
+			buildConfigurationList = 034C08861998E4E000CC6C79 /* Build configuration list for PBXProject "CustomShapeViews" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 034C08821998E4E000CC6C79;
+			productRefGroup = 034C088C1998E4E000CC6C79 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				034C088A1998E4E000CC6C79 /* CustomShapeViews */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		034C08891998E4E000CC6C79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				034C08991998E4E000CC6C79 /* InfoPlist.strings in Resources */,
+				034C08A11998E4E000CC6C79 /* Default.png in Resources */,
+				034C08A31998E4E000CC6C79 /* Default@2x.png in Resources */,
+				034C08A51998E4E000CC6C79 /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		034C08871998E4E000CC6C79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				034C089B1998E4E000CC6C79 /* main.m in Sources */,
+				034C089F1998E4E000CC6C79 /* CSVAppDelegate.m in Sources */,
+				034C08AE1998E50600CC6C79 /* CSVViewController.m in Sources */,
+				034C08B31998E9DC00CC6C79 /* CSVTraingleView.m in Sources */,
+				034C08B61998ECD000CC6C79 /* CSVCircleView.m in Sources */,
+				034C08B91998EE9300CC6C79 /* CSVOctagonView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		034C08971998E4E000CC6C79 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				034C08981998E4E000CC6C79 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		034C08A61998E4E000CC6C79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		034C08A71998E4E000CC6C79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		034C08A91998E4E000CC6C79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CustomShapeViews/CustomShapeViews-Prefix.pch";
+				INFOPLIST_FILE = "CustomShapeViews/CustomShapeViews-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		034C08AA1998E4E000CC6C79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CustomShapeViews/CustomShapeViews-Prefix.pch";
+				INFOPLIST_FILE = "CustomShapeViews/CustomShapeViews-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		034C08861998E4E000CC6C79 /* Build configuration list for PBXProject "CustomShapeViews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				034C08A61998E4E000CC6C79 /* Debug */,
+				034C08A71998E4E000CC6C79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		034C08A81998E4E000CC6C79 /* Build configuration list for PBXNativeTarget "CustomShapeViews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				034C08A91998E4E000CC6C79 /* Debug */,
+				034C08AA1998E4E000CC6C79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 034C08831998E4E000CC6C79 /* Project object */;
+}

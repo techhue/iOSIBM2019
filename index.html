@@ -1,0 +1,2283 @@
+<!doctype html>
+
+<!--NOTES FROM FISCHER REVIEW
+Overall
+  Note that bootstrap is not required... it is a carryover from my sample pages.  Fine to use of course
+  You can also obfuscate the question data as you did before...
+Specific
+  Search for "NOTE:" in the code to see other inline comments...
+-->
+
+<html lang="en">
+
+<head>
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>An Introduction to Swift and iOS SDK - Assessment</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- Load lkw CSS-->
+    <link rel="stylesheet" href="http://lksprod.dst.ibm.com/lkw/v0/widgets/modules/widget.css" />
+    <link rel="stylesheet" href="http://lksprod.dst.ibm.com/lkw/v0/widgets/modules/question/widget.css" />
+
+	<!-- custom CSS styles -->
+	<link rel="stylesheet" href="styles/assess_style.css" />
+
+    <!-- Deal with bootstrap making LKW disabled buttons not look right-->
+    <style>
+
+    </style>
+
+    <!-- Scripts -->
+    <script src="http://lksprod.dst.ibm.com/lkw/v0/widgets/libraries/jquery.min.js"></script>
+    <script src="http://lksprod.dst.ibm.com/lkw/v0/widgets/libraries/handlebars.runtime.min.js"></script>
+    <script src="http://lksprod.dst.ibm.com/lkw/v0/widgets/modules/widget.js"></script>
+    <script src="http://lksprod.dst.ibm.com/lkw/v0/widgets/modules/service.js"></script>
+    <script src="http://lksprod.dst.ibm.com/lkw/v0/widgets/modules/question/widget.js"></script>
+
+
+   <script>
+        //Revised Example of creating an assessment client side
+        //Changes from prior approach
+        //  Widget name changed to LKWAssess
+        //  assessData and questionData are passed separately, as overrides to the loadDataAsync
+        //  Tracking via LT is set up and handled on the server side
+
+		/*
+
+		var generateUniqueRandomNumberList = function(listLength, maxRange){
+		var arr = []
+		while(arr.length < listLength){
+			//var r = Math.floor(Math.random()*maxRange) + 1;
+			var r = Math.floor(Math.random()*maxRange);
+			if(arr.indexOf(r) === -1) arr.push(r);
+		}
+		return arr;
+		}
+
+		var selectRandomQuestions = function(poolOfQuestions, randomNumbers){
+			var newQSet = [];
+
+			for(i=0;i<randomNumbers.length;i++){
+			  newQSet.push(poolOfQuestions[randomNumbers[i]]);
+			}
+			return newQSet;
+		}
+
+		var randomList1 = generateUniqueRandomNumberList(10, 20);
+		var randomList2 = generateUniqueRandomNumberList(10, 20);
+		var randomList3 = generateUniqueRandomNumberList(10, 20);
+
+		var pool1 = selectRandomQuestions(questionData1, randomList1);
+		var pool2 = selectRandomQuestions(questionData2, randomList2);
+		var pool3 = selectRandomQuestions(questionData3, randomList3);
+		var FinalRandomQuestions = pool1.concat(pool2, pool3); //with randomization of questions and selected number of questions from each section
+		//var FinalRandomQuestions = questionData1.concat(questionData2, questionData3); //without randomization and to display all the questions inorder.
+        */
+		function createNewAssessmentWidget() {
+            //For testing purposes, we remove any existing widget from DOM element first
+            var config = {
+                name: "LKWAssess",
+
+				//assessId to be provided after database registration has been processed
+                assessId: 842
+            };
+
+		/*	//What's between the curley braces gets migrated to the DB, so be sure to double quote properties and strings and avoid trailing comma to make it valid JSON.  Note that title field has its own column in the DB.
+			var introduction_text = "<p>Welcome to the assessment on Introduction to Swift and iOS SDK.</p>"
+								 + "<p>The objective of the assessment is to gauge your understanding of the concepts covered in this training. </p>"
+								 + "<p>Please read the following instructions carefully before you proceed:</p> "
+								 + "<ul><li>The assessment consists of 50 questions.</li>"
+								 + "<li>There is no time limit to complete the assessment.</li>"
+								 + "<li>You must score 80% or more to pass.</li>"
+								 + "<li>There is no restriction on the number of attempts.</li>"
+								 + "<li>Points will not be deducted for a wrong answer.</li>"
+								 + "<li>You can toggle back and forth between questions. You can also go back to the next unanswered question by clicking on the \"Next Unanswered\" button.</li>"
+								 + "<li>The assessment will be automatically submitted once all the questions in the assessment are answered.</li></ul>"
+								 + "<p>Note: You will get course credit ONLY on passing the assessment.</p>"
+								 + "<p>Good luck!</p>";
+            var assessData = {
+				"trackingId" : '4939',
+				"title" : "Assessment Feedback",
+				"allowedAttempts": 0,
+				"allowRetakeOnSuccess" : true,
+				"promptText": "Assessment",
+				"additionalGuidance": introduction_text,
+				"maxQuestions": 50,
+				"passPercent": 80,
+				"mode": "freeform",
+				"showSolution" : true,
+				"showFeedback": true,
+				"hideAllMessages": false,
+				"maxDuration": 0, //3600
+				"randomize" : true, // uncomment if randomization of questions is not required
+			};
+			*/
+		//NOTE: last line above should have no comma after it.  Use https://jsonlint.com/ to verify your JSON is good before putting in DB
+		//NOTE: All overrides below are unnecessary as is the parameter to the parent function, which your code does not use...commenting out
+
+            var questionData = [
+			//Question 1
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "When you position a label near the top of a view in Interface Builder, what should you do to ensure that the label isn't obscured by the system bar?<br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "Turn on Dynamic Positioning in the Attributes inspector for the object." },
+                        { "text": "Add 24 to a constraint that's constrained to the top of the view." },
+                        { "text": "Constrain the top constraint to the Safe Area.", "solution": true },
+                        { "text": "Nothing; iOS will automatically take the system bar into account while positioning the label."},
+                    ],
+                },
+                //Question 2
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "If all of an object's properties conform to the Codable protocol, which additional step must your object take—in addition to putting Codable in its declaration—to make it conform to the Codable protocol?<br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "Adopt the init(from:) method" },
+                        { "text": "Adopt the encode(to:) method" },
+                        { "text": "Subclass NSObject"},
+                        { "text": "None", "solution": true },
+                    ],
+                },
+				//Question 3
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which protocol should a type declaration adopt to allow the objects to be converted to a form of data that can be written to a file?<br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "Writable" },
+                        { "text": "Encodable" },
+                        { "text": "Convertable"},
+                        { "text": "Codable", "solution": true },
+                    ],
+                },
+				//Question 4
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "When you use the Codable protocol to translate information from JSON into your custom model object, what must you do when the JSON keys don't match the object's property names?<br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "Implement the decode(from:) method to copy the JSON values to the object's properties." },
+                        { "text": "Rename the model object's properties to match the JSON keys." },
+                        { "text": "Declare a nested enumeration named CodingKeys that conforms to the CodingKey protocol.", "solution": true },
+                        { "text": "Add a mapping method to the model object that translates the JSON keys to match the object's properties."},
+                    ],
+                },
+				//Question 5
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "In the following Swift example, what should replace the two blanks to allow the string to contain the multiple lines?<br/><br/><em>let greetingString = ___<br>Hello.<br>How are you doing?<br>___</em><br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "\"" },
+                        { "text": "/\"" },
+                        { "text": "'"},
+                        { "text": "\"\"\"", "solution": true },
+                    ],
+                },
+            //Question 6
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "An XIB is: <br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "A scene in a storyboard" },
+                        { "text": "The old name for a storyboard" },
+                        { "text": "A type of connection in Interface Builder"},
+                        { "text": "A metadata file that Xcode uses for project management" },
+                        { "text": "Like a storyboard file, but represents only a single view hierarchy", "solution": true },
+                    ],
+                },
+                //Question 7
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following are valid ways to identify a storyboard's initial view controller? <br><br>(Select two.) ",
+                    "options": [
+                        { "text": "The initial view controller is always at the top of the storyboard." },
+                        { "text": "The initial view controller's scene is always sorted first in the document outline." },
+                        { "text": "The initial view controller is always indicated by a gray arrow in the storyboard canvas.", "solution": true},
+                        { "text": "The initial view controller is always highlighted with a blue border in the storyboard." },
+                        { "text": "The 'Is Initial View Controller' option is always selected for the initial view controller in the Attributes inspector.", "solution": true },
+                    ],
+
+                },
+				//Question 8
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Suppose you create an app for chatting online with colleagues. Which of the following would be represented in code by a model object?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "The sign-in screen"},
+                        { "text": "A web sync service"},
+                        { "text": "A message recipient", "solution": true},
+                        { "text": "The settings page"},
+                        { "text": "The Send button" },
+                    ],
+                },
+				 //Question 9
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following is true of the Model View Controller design pattern? <br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "Views tend to be app-specific and nonreusable."},
+                        { "text": "You should group your model types into a single file." },
+                        { "text": "You should use controllers sparingly."},
+                        { "text": "Models should never own views.", "solution": true},
+                    ],
+                },
+				   //Question 10
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "What are the built-in table view styles? <br><br>(Select two.) ",
+                    "options": [
+                        { "text": "Plain", "solution": true  },
+                        { "text": "Grouped", "solution": true },
+                        { "text": "Grid"},
+                        { "text": "List"},
+                        { "text": "Collection"},
+                    ],
+                },
+                 //Question 11
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Without subclassing 'UITableViewCell', there are three subview outlets available for displaying a table view cell's content. What are they? <br><br>(Select three.)  ",
+                    "options": [
+                        { "text": "thumbnail"},
+                        { "text": "imageView", "solution": true },
+                        { "text": "textLabel", "solution": true },
+                        { "text": "accessoryView"},
+                        { "text": "detailTextLabel", "solution": true},
+                    ],
+                },
+                //Question 12
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider the following snippet and then answer the question: <br> <em>override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> <br>UITableViewCell {<br>let cell = UITableViewCell(style: .default, reuseIdentifier:\"MealCell\") <br>let meal = meals[indexPath.row]<br>cell.textLabel?.text = meal.name<br>return cell<br>}<br></em> This code has a problem. What is it?<br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "A table view cell should be dequeued, not instantiated directly.", "solution": true},
+                        { "text": "The relevant property of the 'indexPath' is item, not row."},
+                        { "text": "The reuse identifier should be an integer, not a string."},
+                        { "text": "The 'textLabel' property of 'UITableViewCell' is not optional."},
+                    ],
+                },
+                 //Question 13
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "The UITableViewDataSource protocol has only two required methods. What are they? <br><br>(Select two.) ",
+                    "options": [
+                        { "text": "numberOfSections(in:)"},
+                        { "text": "tableView(_:cellForRowAt:)", "solution": true },
+                        { "text": "tableView(_:numberOfRowsInSection:)", "solution": true },
+                        { "text": "tableView(_:didSelectRowAt:)"},
+                        { "text": "tableView(_:heightForRowAt:)"},
+                    ],
+                },
+                //Question 14
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which 'UITableViewDelegate' method is most commonly implemented in order to respond to taps on table view cells?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "tableView(_:didSelectRowAt:)", "solution": true},
+                        { "text": "tableView(_:willSelectRowAt:)"},
+                        { "text": "tableView(_:didDeselectRowAt:)"},
+                        { "text": "tableView(_:accessoryButtonTappedForRowWithIndexPath:)"},
+                        { "text": "tableView(_:performAction:forRowAtIndexPath:withSender:)" },
+                    ],
+                },
+                //Question 15
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "How many table view cells will a table view request when it loads?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "Only those that will be immediately visible", "solution": true},
+                        { "text": "All of them"},
+                        { "text": "All cells for the current table view section"},
+                        { "text": "Fourteen"},
+                        { "text": "As many as it can, until tableView(_:cellForRowAt:) returns nil", "html" : "As many as it can, until <em>tableView(_:cellForRowAt:)</em> returns <em>nil</em>" },
+                    ],
+                },
+                //Question 16
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "When the user performs a swipe-to-delete action on a table view cell, which data source callback is called first?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "tableView(_:canEditRowAt:)", "solution": true},
+                        { "text": "tableView(_:editingStyleForRowAt:)"},
+                        { "text": "tableView(_:commit:forRowAt:)"},
+                        { "text": "tableView(_:willBeginEditingRowAt:)"},
+                        { "text": "tableView(_:editActionsForRowAt:)" },
+                    ],
+                },
+                //Question 17
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "How do you create a static table view?<br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "Instantiate one directly using 'UIStaticTableView(frame:style:)'."},
+                        { "text": "Create a table view and set its dynamic property to false."},
+                        { "text": "Add a table view in Interface Builder and set its 'content' attribute to 'Static Cells'.", "solution": true},
+                        { "text": "Create a table view and assign its 'dataSource' property to itself."},
+                    ],
+                },
+                //Question 18
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which callback pattern does <em>UITableViewRowAction</em> use to handle swipe actions on table view cells?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "Closures", "solution": true},
+                        { "text": "Delegation"},
+                        { "text": "Notification Center"},
+                        { "text": "Target/Action"},
+                        { "text": "Key-Value Observing" },
+                    ],
+                },
+                //Question 19
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Suppose you intend to save archived data to disk. Which class should you use to get the URL of your app’s documents directory?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "FileManager", "solution": true},
+                        { "text": "UIDocument"},
+                        { "text": "FileWrapper"},
+                        { "text": "NSKeyedArchiver"},
+                        { "text": "NSCoder" },
+                    ],
+                },
+                 //Question 20
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following are roles of the sandbox? <br><br>(Select two). ",
+                    "options": [
+                        { "text": "To provide a safe way to execute scripted code without crashing your app"},
+                        { "text": "To prevent apps from directly accessing each other's content", "solution": true },
+                        { "text": "To prevent apps from directly accessing system-owned content", "solution": true },
+                        { "text": "To give you a way to rapidly prototype Swift code"},
+                        { "text": "To allow apps to communicate with one another and share data"},
+                    ],
+                },
+				//Question 21
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider the following snippet and then answer the question:<br><br><em>let alertController = UIAlertController(title: \"I'm sorry Dave\", message: \"I'm afraid I can't do that.\",preferredStyle: .alert)<br>let cancelAction = UIAlertAction(title: \"OK\", style: .cancel) { <br>(alertAction) in<br>print(\"Uh, oh!\")<br>}<br>alertController.addAction(cancelAction)<br>present(alertController, animated: true, completion: nil)</em><br><br>Regarding this presentation of an alert controller, when should the alert controller be dismissed?<br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "Nowhere; it will be dismissed automatically when the user taps a button.", "solution": true},
+                        { "text": "The next line after present(_:animated:completion:)."},
+                        { "text": "Inside the alert action’s handler closure."},
+                        { "text": "At the end of the enclosing method or function."},
+                    ],
+                },
+                //Question 22
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which system view controller is shown here?<br><br> <img style=\"margin-right: .5em;\" src=\"img/image8.png\" /> <br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "UIShareController"},
+                        { "text": "UIAlertController"},
+                        { "text": "UIImagePickerController"},
+                        { "text": "UIActivityViewController", "solution": true},
+                        { "text": "CNContactViewController" },
+                    ],
+                },
+                //Question 23
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which callback pattern does <em>UIImagePickerController</em> use to handle picked images? <br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "Closures"},
+                        { "text": "Delegation", "solution": true},
+                        { "text": "Notification Center"},
+                        { "text": "Target/Action"},
+                        { "text": "Key-Value Observing" },
+                    ],
+                },
+                //Question 24
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following is true when you use <em>tableView(_:heightForRowAt:)</em> to dynamically size table view cells?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "tableView(_:heightForRowAt:) will be called only if the table view’s rowHeight is not set.","html": "<em>tableView(_:heightForRowAt:)</em> will be called only if the table view’s rowHeight is not set."},
+                        { "text": "If implemented, tableView(_:heightForRowAt:) will be called for every cell, and so must return quickly to minimize the impact on scroll peformance.", "html": "<em>If implemented, tableView(_:heightForRowAt:)</em> will be called for every cell, and so must return quickly to minimize the impact on scroll peformance.", "solution": true},
+                        { "text": "The default implementation of tableView(_:heightForRowAt:) returns 0.", "html": "The default implementation of <em>tableView(_:heightForRowAt:)</em> returns <em>0</em>."},
+                        { "text": "tableView(_:heightForRowAt:) must call the superclass implementation.", "html": "<em>tableView(_:heightForRowAt:)</em> must call the superclass implementation."},
+                        { "text": "Implementing tableView(_:heightForRowAt:) is more performant than relying on the table view’s rowHeight.", "html": "Implementing <em>tableView(_:heightForRowAt:)</em> is more performant than relying on the table view’s <em>rowHeight</em>."},
+                    ],
+                },
+                 //Question 25
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following are customization options for a date formatter? <br><br>(Select three.) ",
+                    "options": [
+                        { "text": "Format of the time", "solution": true  },
+                        { "text": "Whether to cache formatter results for future use" },
+                        { "text": "Format of the date", "solution": true},
+                        { "text": "Whether to output dates as Date or TimeInterval instances", "html": "Whether to output dates as Date or <em>TimeInterval</em> instances"},
+                        { "text": "Which locale to use for formatting", "solution": true },
+                    ],
+                },
+				//Question 26
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following is an example of an HTTP method?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "POST", "solution": true},
+                        { "text": "/receivables/"},
+                        { "text": "resume()"},
+                        { "text": "JSON"},
+                        { "text": "404" },
+                    ],
+                },
+                //Question 27
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "<em>http://www.finance.pretendco.com:80/receivables/ar_january2017.pdf</em><br> What is the URL’s path?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "ar_january2017.pdf"},
+                        { "text": "/receivables/"},
+                        { "text": "/receivables/ar_january2017.pdf", "solution": true},
+                        { "text": "www.finance.pretendco.com"},
+                        { "text": "www.finance.pretendco.com:80/receivables/ar_january2017.pdf" },
+                    ],
+                },
+                //Question 28
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "What classes would you typically use in code that adds “?page_size=A4” to the end of a URL? <br><br>(Select two.) ",
+                    "options": [
+                        { "text": "URLQueryItem", "solution": true  },
+                        { "text": "URLComponents", "solution": true },
+                        { "text": "URLRequest"},
+                        { "text": "URLResourceKey"},
+                        { "text": "URLProtocol"},
+                    ],
+                },
+                //Question 29
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "A URL session data task’s completion handler must take three arguments. What are they? <br><br>(Select three.) ",
+                    "options": [
+                        { "text": "Data?", "solution": true  },
+                        { "text": "URLResponse?", "solution": true },
+                        { "text": "Error?", "solution": true },
+                        { "text": "URL?"},
+                        { "text": "URLRequest?"},
+                    ],
+                },
+				 //Question 30
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following is the correct way to create a string representation of the data returned by a data task within a URL session?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "let str = String(data: data, encoding: .utf8)", "solution": true},
+                        { "text": "let str = String(bytes: data, encoding: .utf8)"},
+                        { "text": "let str = data.string(encoding: .utf8)"},
+                        { "text": "let str = data.utf8String"},
+                    ],
+                },
+                //Question 31
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Review the following incomplete JSON snippet and then answer the question:<br><em>\"favorite_movies\": [ <br>{<br>\"title\": \"Finding Dory\", <br>\"release_year\": 2016<br>},<br>{<br>\"title\": \"Inside Out\",<br>\"release_year\": 2015<br>}<br>}<br><br></em>Which compound Swift data type is this JSON’s structure closest to?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "[String:[[String:AnyObject]]]", "solution": true},
+                        { "text": "[String:[String:AnyObject]]"},
+                        { "text": "[[String:AnyObject]]"},
+                        { "text": "[String:[[String:[AnyObject]]]]"},
+                    ],
+                },
+                //Question 32
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following types are representable as JSON? <br><br>(Select three.)  ",
+                    "options": [
+                        { "text": "dictionary", "solution": true  },
+                        { "text": "tuple"},
+                        { "text": "set"},
+                        { "text": "string", "solution": true },
+                        { "text": "array", "solution": true },
+                    ],
+                },
+                //Question 33
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following is true of using <em>JSONSerialization</em> for decoding JSON?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "JSONSerialization automatically does its work on a background queue."},
+                        { "text": "You create an instance of JSONSerialization when you need to encode or decode JSON."},
+                        { "text": "jsonObject(with:) throws an error if the JSON data could not be decoded.", "solution": true},
+                        { "text": "Despite its name, JSONSerialization can also decode XML." },
+                    ],
+                },
+				//Question 34
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "What does App Transport Security mean for your app?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "Web service requests must use HTTPS to keep communications safe.", "solution": true},
+                        { "text": "To prevent fraud, you must code-sign your app before you upload it to Apple."},
+                        { "text": "Streaming video must use HLS for secure streams."},
+                        { "text": "To prevent third-party malicious code injection, Apple encrypts your app before it is downloaded from the App Store." },
+                    ],
+                },
+                //Question 35
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following is a best practice for apps that use web services? <br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "To prevent a crash caused by lack of data, you should present a modal \"Wait\" view when you are waiting for web service results."},
+                        { "text": "To prevent accidental use of stale data, you should disable the URL cache."},
+                        { "text": "For code clarity, your URL session code should be in the action method of the control that initiates the request."},
+                        { "text": "For a good user experience, you should show the network activity indicator when you have inflight requests that are waiting for results.", "solution": true },
+                    ],
+                },
+                //Question 36
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Only one type of activity should be done on your app’s main thread. What is it? <br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "Saving and loading data on disk"},
+                        { "text": "Business logic"},
+                        { "text": "Managing network requests"},
+                        { "text": "Updating and interacting with the user interface", "solution": true},
+                        { "text": "Data manipulation and modeling" },
+                    ],
+                },
+                //Question 37
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider the following snippet and then answer the question:<br> <em>let url = URL(string: \"https://www.apple.com\")!<br>let task = URLSession.shared.dataTask(with: url) {<br>(data: Data?, response: URLResponse?, error: Error?) in<br>guard let data = data,<br>let result = String(data: data, encoding: .utf8) else {<br>return }<br>self.textView.text = result<br>}<br><br></em> What is wrong with this code snippet?<br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "The completion handler will execute in the background, so the UI update (textView.text assignment) should be wrapped in a call to DispatchQueue.main.async(…) to move it to the main queue.", "html": "The completion handler will execute in the background, so the UI update (<em>textView.text</em> assignment) should be wrapped in a call to <em>DispatchQueue.main.async(…)</em> to move it to the main queue.", "solution": true},
+                        { "text": "The completion closure has an incorrect signature; it should be (Data, URLResponse, Error) -> Void.", "html": "The completion closure has an incorrect signature; it should be <em>(Data, URLResponse, Error) -> Void.</em>"},
+                        { "text": "No force-unwrapping is necessary for the creation of url, so the ! can be deleted."},
+                        { "text": "guard let data = data will emit a compiler error; a new local variable should be used instead of reusing data." , "html": "<em>guard let data = data</em> will emit a compiler error; a new local variable should be used instead of reusing <em>data</em>."},
+                    ],
+                },
+                //Question 38
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which <em>DispatchQueue</em> method is the best to use for enqueuing one closure for execution on another queue, without waiting for it to return?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "sync(execute:)"},
+                        { "text": "async(execute:)", "solution": true},
+                        { "text": "asyncAfter(deadline:execute:)"},
+                        { "text": "concurrentPerform(iterations:execute:)" },
+                    ],
+                },
+                //Question 39
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following are label properties that can be configured using the Attributes inspector? <br><br>(Select three.) ",
+                    "options": [
+                        { "text": "Text font", "solution": true },
+                        { "text": "Text color", "solution": true },
+                        { "text": "Text encoding"},
+                        { "text": "Current text", "solution": true },
+                        { "text": "Text language" },
+                    ],
+                },
+                //Question 40
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "A label's font can be specified in which Interface Builder inspector?<br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "Size inspector" },
+                        { "text": "Attributes inspector", "solution": true },
+                        { "text": "Identity inspector"},
+                        { "text": "Connections inspector" },
+                        { "text": "File inspector" },
+                    ],
+                },
+                 //Question 41
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which content modes for an image view will always show the entire image without clipping it, regardless of the 'clipsToBounds' property of the image view? <br><br>(Select all that apply.)",
+                    "options": [
+                        { "text": "Center" },
+                        { "text": "Aspect Fit", "solution": true },
+                        { "text": "Aspect Fill"},
+                        { "text": "Scale to Fill", "solution": true },
+                    ],
+                },
+                //Question 42
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider the image view (outlined in blue) in the screenshot and then answer the question.<br><br> <img style=\"margin-right: .5em;\" src=\"img/image1.png\" /><br> <br>Which of an image view's properties affects whether the image is chopped off at the blue line or is allowed to draw outside the image view's area? <br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "masksToBounds" },
+                        { "text": "clipsToBounds", "solution": true },
+                        { "text": "isBounded"},
+                        { "text": "clippingRegion" },
+                    ],
+                },
+                 //Question 43
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following are 'UIScrollView' subclasses? <br><br>(Select all that apply.) ",
+                    "options": [
+                        { "text": "UIImageView" },
+                        { "text": "UITableView", "solution": true },
+                        { "text": "UICollectionView", "solution": true },
+                        { "text": "UIStackView"},
+                    ],
+                },
+                //Question 44
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which property of 'UIScrollView' indicates the distance, in points, that the scroll view has been scrolled? <br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "contentSize" },
+                        { "text": "contentProgress" },
+                        { "text": "contentOffset", "solution": true},
+                        { "text": "contentInset" },
+                    ],
+                },
+                //Question 45
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which keyword decorates a property that refers to an object in a storyboard? <br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "@IBAction" },
+                        { "text": "@IBDesignable" },
+                        { "text": "@IBInspectable"},
+                        { "text": "@IBOutlet", "solution": true},
+                    ],
+                },
+                //Question 46
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Suppose you use Interface Builder to add a button to an interface and add a new action method to your code. By default, what argument will the button pass to its action method? <br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "The UITouch instance that describes the user interaction." },
+                        { "text": "The UIEvent instance that describes the touch event." },
+                        { "text": "The default action method takes no arguments."},
+                        { "text": "Itself.", "solution": true },
+                    ],
+                },
+                 //Question 47
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following are customizable properties of a text field? <br><br>(Select all that apply.) ",
+                    "options": [
+                        { "text": "The text on the keyboard's return key", "solution": true  },
+                        { "text": "Whether the keyboard enables autocorrect", "solution": true },
+                        { "text": "How the keyboard deals with capitalization", "solution": true },
+                        { "text": "Whether to hide its contents by requiring a password", "solution": true },
+                        { "text": "The text displayed when the field is empty", "solution": true },
+                    ],
+                },
+                 //Question 48
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following are callback patterns that 'UITextField' supports for relaying text input events? <br><br>(Select two.) ",
+                    "options": [
+                        { "text": "Delegation", "solution": true  },
+                        { "text": "Key-Value Observing"},
+                        { "text": "Target/Action", "solution": true },
+                        { "text": "Closures"},
+                        { "text": "Notification Center"},
+                    ],
+                },
+                //Question 49
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Review the screenshot and then answer the question.<br><br> <img style=\"margin-right: .5em;\" src=\"img/image2.png\" /> <br><br>Consider the Auto Layout constraints that affect the button in this screenshot. What is wrong with the layout?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "Nothing is wrong." },
+                        { "text": "There are mutually unsatisfiable constraints, and one or more will be broken when the app runs, causing the button to move to the dotted box."},
+                        { "text": "The view in the canvas is misplaced, and the dotted box shows where the button will be when the app runs.", "solution": true },
+                        { "text": "The constraints are creating an ambiguous layout, so when the app runs, the button may appear anywhere between its shown location and the location of the dotted box." },
+                    ],
+                },
+                //Question 50
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Review the screenshot and then answer the question.<br><br> <img style=\"margin-right: .5em;\" src=\"img/image3.png\" /><br> <br>Consider the Auto Layout constraints that affect the button in this screenshot. Which of the following are true? <br><br>(Select all that apply.)  ",
+                    "options": [
+                        { "text": "The button will change size if its superview changes size." },
+                        { "text": "The button will change size if its text is changed.", "solution": true },
+                        { "text": "The button will remain centered in its container.", "solution": true},
+                        { "text": "The button has missing Auto Layout constraints." },
+                    ],
+                },
+                 //Question 51
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "When you add an Auto Layout constraint titled \"Center Vertically in Container\", what does \"container\" mean?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "The view's window" },
+                        { "text": "The view's immediate superview", "solution": true },
+                        { "text": "The view's nearest ancestor view that is a container of multiple views"},
+                        { "text": "The view's nearest ancestor view that is the view of a view controller" },
+                    ],
+                },
+                 //Question 52
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "How do you know which attributes of a view or constraint can be varied between size classes in Interface Builder? <br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "They are indistinguishable from invariant attributes in the inspector." },
+                        { "text": "They are listed once for each possible size class in the inspector." },
+                        { "text": "They are collected in the \"Trait Variations\" group in the inspector."},
+                        { "text": "They have a \"+\" button next to them in the inspector.", "solution": true },
+                    ],
+                },
+                 //Question 53
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Review the screenshot and then answer the question.<br><br> <img style=\"margin-right: .5em;\" src=\"img/image4.png\" /><br> <br>What is the role of the circled button?<br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "Create a new pin constraint." },
+                        { "text": "Create a new alignment constraint." },
+                        { "text": "Embed the selected view in a stack view."},
+                        { "text": "Toggle the selected constraint on or off." },
+                        { "text": "Resolve Auto Layout issues.", "solution": true},
+                    ],
+                },
+                 //Question 54
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which UIStackView properties are used to automatically manage the Auto Layout constraints between its arranged subviews?<br><br>(Select three.) ",
+                    "options": [
+                        { "text": "distribution", "solution": true  },
+                        { "text": "alignment", "solution": true },
+                        { "text": "contentMode"},
+                        { "text": "isHidden"},
+                        { "text": "spacing", "solution": true },
+                    ],
+                },
+                //Question 55
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider a stack view arranged horizontally, as in this diagram:<br><br> <img style=\"margin-right: .5em;\" src=\"img/image5.png\" /> <br><br>Assuming the stack view did not resize its subviews, which distribution would achieve a layout as shown? <br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "fill" },
+                        { "text": "fillEqually"},
+                        { "text": "fillProportionally"},
+                        { "text": "equalSpacing", "solution": true  },
+                        { "text": "equalCentering" },
+                    ],
+                },
+                //Question 56
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "In which situation should you use a navigation controller? <br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "You have only one view controller to show the user." },
+                        { "text": "You have a flat organization of your view controllers so that the user can switch between them in any order."},
+                        { "text": "You have a linear organization of your view controllers so that the user can swipe between them like the pages of a book."},
+                        { "text": "You have a hierarchical organization of your view controllers so that the user can drill down through the app's scenes.", "solution": true  },
+                    ],
+                },
+                //Question 57
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Review the screenshot and answer the question.<br><br> <img style=\"margin-right: .5em;\" src=\"img/image6.png\" /> <br><br>What is the circled object called? <br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "Segue", "solution": true},
+                        { "text": "Scene"},
+                        { "text": "Segment"},
+                        { "text": "Selector"},
+                        { "text": "Switch" },
+                    ],
+                },
+                //Question 58
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Where should 'prepare(for:sender:)' be implemented when you create a segue between two view controllers?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "The source view controller", "solution": true },
+                        { "text": "The destination view controller"},
+                        { "text": "The container view controller"},
+                        { "text": "The container view controller's delegate"},
+                    ],
+                },
+                //Question 59
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "What is the name of the method called on the destination view controller of an unwind segue? <br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "perform(unwindSegue:)" },
+                        { "text": "perform(segue:)"},
+                        { "text": "prepare(for:)"},
+                        { "text": "prepare(forUnwind:)"},
+                        { "text": "You can call it whatever you want.", "solution": true },
+                    ],
+                },
+				 //Question 60
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider this screenshot and then answer the question.<br><br> <img style=\"margin-right: .5em;\" src=\"img/image7.png\" /> <br><br>Which of the following would, within view controller code, clear the \"!\" from the tab bar item? <br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "tabBarItem.badgeCount = 0"},
+                        { "text": "tabBarItem.isError = false"},
+                        { "text": "tabBarItem.badgeValue = nil", "solution": true},
+                        { "text": "tabBarItem.badgeType = .none"},
+                    ],
+                },
+                 //Question 61
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following are customizations of a tab bar item, as opposed to the tab bar controller that owns it? <br><br>(Select three.)",
+                    "options": [
+                        { "text": "The item's title", "solution": true  },
+                        { "text": "The item's index"},
+                        { "text": "The action that is invoked when the tab bar item is tapped"},
+                        { "text": "A string to show in a red badge on the item", "solution": true },
+                        { "text": "The images to display when the item is selected and unselected", "solution": true },
+                    ],
+                },
+                 //Question 62
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "What will happen if you embed ten child view controllers in a tab bar controller, on an iPhone in portrait?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "A \"More\" button will be added to modally present a list of all view controllers past the fourth.", "solution": true},
+                        { "text": "This is not possible; a UITabBarController can support only five child view controllers in this configuration."},
+                        { "text": "The tab bar will automatically resize the tab bar items so that they all fit."},
+                        { "text": "The tab bar will raise an exception and the app will crash."},
+                    ],
+                },
+
+                 //Question 63
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which lifecycle method of a view controller is called first? <br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "viewDidLoad()", "solution": true},
+                        { "text": "viewWillAppear(_:)"},
+                        { "text": "viewWillDisappear(_:)"},
+                        { "text": "viewDidAppear(_:)"},
+                        { "text": "viewDidDisappear(_:)" },
+                    ],
+                },
+				 //Question 64
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "What are the three main types of navigation hierarchies?<br><br> (Select three.) ",
+                    "options": [
+                        { "text": "Hierarchical", "solution": true  },
+                        { "text": "Flat", "solution": true },
+                        { "text": "Content or experience driven", "solution": true },
+                        { "text": "Linear"},
+                        { "text": "Siloed"},
+                    ],
+                },
+
+                //Question 65
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which document should you refer to for general advice about using modal as opposed to push segues? <br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "Human Interface Guidelines", "solution": true},
+                        { "text": "App Store Review Guidelines"},
+                        { "text": "UIKit API Diffs"},
+                        { "text": "UIViewController class reference"},
+                        { "text": "View Programming Guide" },
+                    ],
+                },
+                //Question 66
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which lifecycle method will be called first if a phone call comes in? <br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "applicationWillResignActive(_:)", "solution": true},
+                        { "text": "applicationProtectedDataDidBecomeAvailable(_:)"},
+                        { "text": "applicationDidEnterBackground(_:)"},
+                        { "text": "application(_:willContinueUserActivityWithType:)"},
+                        { "text": "application(_:didReceiveRemoteNotification:fetchCompletionHandler:)" },
+                    ],
+                },
+                //Question 67
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which lifecycle method is the most appropriate for registering for push notifications? <br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "application(_:didFinishLaunchingWithOptions:)", "solution": true},
+                        { "text": "application(_:didRegister:)"},
+                        { "text": "applicationDidBecomeActive(_:)"},
+                        { "text": "applicationWillEnterForeground(_:)"},
+                    ],
+                },
+                //Question 68
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which lifecycle method is the most appropriate for saving user data and application state information?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "applicationDidEnterBackground(_:)", "solution": true},
+                        { "text": "applicationProtectedDataWillBecomeUnavailable(_:)"},
+                        { "text": "applicationWillTerminate(_:)"},
+                        { "text": "applicationDidReceiveMemoryWarning(_:)"},
+                    ],
+                },
+				//Question 69
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "What will the following code print to the console?<br><em>let greeting = \"Hello \"<br>let name = \"Chris\"<br>print (\"greeting + name\")</em><br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "\"Hello\""},
+                        { "text": "\"Chris\""},
+                        { "text": "\"Hello Chris\""},
+                        { "text": "\"greeting + name\"", "solution": true},
+                    ],
+                },
+				//Question 70
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following Swift features make it a safe language? <br><br>(Select four.) ",
+                    "options": [
+                        { "text": "Explicit types", "solution": true  },
+                        { "text": "Type inference", "solution": true },
+                        { "text": "Error handling", "solution": true},
+                        { "text": "Optionals", "solution": true},
+                        { "text": "Dynamic runtime"},
+                        { "text": "Header files"},
+                        { "text": "Automatic type conversion"},
+                    ],
+                },
+                //Question 71
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following tools is designed for quickly prototyping Swift code?<br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "Playgrounds", "solution": true},
+                        { "text": "Safari"},
+                        { "text": "Terminal"},
+                        { "text": "Xcode"},
+                    ],
+                },
+				//Question 72
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider this code snippet and then answer the question:<br><br><em>var names = [\"Alice\", \"Barry\", \"Chelsea\", \"Deepak\"]<br>_________ {<br>print(\"next!\")<br>}<br><br></em>Which of the following should fill in the blank as valid syntax for looping over the names array? <br><br>(Select two.) ",
+                    "options": [
+                        { "text": "for (int i = 0; i < names.count; i++)"},
+                        { "text": "for (index, name) in names" },
+                        { "text": "for (index, name) in names.enumerated()", "solution": true},
+                        { "text": "for names.indices, names.values"},
+                        { "text": "for name in names", "solution": true  },
+                    ],
+                },
+				 //Question 73
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which keyword should you use to stop iterating a loop and execute the code outside the loop?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "break", "solution": true},
+                        { "text": "continue"},
+                        { "text": "return"},
+                        { "text": "stop"},
+                        { "text": "exit"},
+                    ],
+                },
+				//Question 74
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "When should you use an implicitly unwrapped optional variable?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "When its value is not known at initialization, but you can guarantee that it will have a value before it is used.", "solution": true},
+                        { "text": "When its value is not known at initialization, but you will check it for nil before use."},
+                        { "text": "When you want to decrease the number of times you force unwrap it throughout your code."},
+                        { "text": "You should never use implicitly unwrapped optionals."},
+                    ],
+                },
+                //Question 75
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider this string declaration and then answer the question below:<br><br><em>var name: String? = \"Johnny Appleseed\"</em><br>Which of the following is the correct way to get the length of this string in characters?<br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "var len = name.count"},
+                        { "text": "var len = name?.count", "solution": true},
+                        { "text": "var len = name?.count?"},
+                    ],
+                },
+                //Question 76
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider this string declaration and then answer the question below:<br><br><em>var name: String? = \"Johnny Appleseed\"<br>var len = name?.characters.count<br></em><br>What is the inferred type of len in this example?<br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "Int"},
+                        { "text": "Int?", "solution": true},
+                        { "text": "Int??"},
+                        { "text": "This code will not compile."},
+                    ],
+                },
+                //Question 77
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following are valid ways to find out if an optional variable named someVar has a value? <br><br>(Select two.) ",
+                    "options": [
+                        { "text": "if someVar == nil { … }", "solution": true  },
+                        { "text": "if let unwrappedVar = someVar { … }", "solution": true },
+                        { "text": "if someVar.hasValue { … }"},
+                        { "text": "if let someVar { … }"},
+                        { "text": "if hasValue(someVar) { … }"},
+                    ],
+                },
+				//Question 78
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider this code snippet and then answer the following question:<br><br><em>A. var firstInteger: Int? = 0<br>B. if let unwrappedFirstInteger = firstInteger {<br>C. firstInteger = unwrappedFirstInteger + 1<br>}<br>D.  var nextInteger: Int? = firstInteger + 1<br><br></em>If this code emits a compiler error, which line is at fault?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "A, because you cannot assign a literal integer to an optional variable."},
+                        { "text": "B, because you cannot optionally bind a variable onto one with a different name."},
+                        { "text": "C, because you cannot increment an optional integer."},
+                        { "text": "D, because you cannot add an optional integer to a nonoptional integer.", "solution": true},
+                        { "text": "None; this code will compile."},
+                    ],
+                },
+                //Question 79
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following is valid syntax, but will crash at runtime if someVar has no value?<br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "if let unwrappedVar = someVar { … }"},
+                        { "text": "if someVar != nil { … }"},
+                        { "text": "let unwrappedVar = someVar?"},
+                        { "text": "let unwrappedVar = someVar!", "solution": true},
+                    ],
+                },
+                //Question 80
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following is an example of optional binding?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "if let unwrappedVar = someVar { … }", "solution": true},
+                        { "text": "if someVar != nil { … }"},
+                        { "text": "let unwrappedVar = someVar?"},
+                        { "text": "let unwrappedVar = someVar!"},
+                    ],
+                },
+                //Question 81
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider this code snippet, and then answer the following question:<br><br><em>class Circle {<br>var radius: Double<br>init?(radius: Double) {<br>self.radius = radius<br>if radius <= 0 {<br>_______<br>}<br>}<br>}<br></em><br>What should replace the blank above in order to give <em>Circle</em> a valid failable initializer? <br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "return nil", "solution": true},
+                        { "text": "return"},
+                        { "text": "fatalError()"},
+                        { "text": "break"},
+                    ],
+                },
+
+                //Question 82
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider this code snippet and then answer the following question:<br><br><em>let powerLevel = 9001</em><br><br>Which of the following is the correct way to check if <em>powerLevel</em> is an integer? <br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "if powerLevel is Int {…}", "solution": true},
+                        { "text": "if powerLevel as Int {…}"},
+                        { "text": "if powerLevel as! Int {…}"},
+                        { "text": "if powerLevel as? Int {…}"},
+                        { "text": "if powerLevel.type is Int {…}"},
+                    ],
+                },
+                //Question 83
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider this code snippet and then answer the following question:<br><br><em>let powerLevel = 9001<br>print(powerLevel as? String)<br></em><br>What will happen when you run this code?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "“9001” will print to the console."},
+                        { "text": "“String(9001)” will print to the console."},
+                        { "text": "“nil” will print to the console.", "solution": true},
+                        { "text": "This code will cause a compiler error."},
+                        { "text": "This code will crash at runtime."},
+                    ],
+                },
+                //Question 84
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider this code snippet and then answer the following question:<br><br><em>let powerLevel = 9001<br>print(powerLevel as! String)<br></em><br>What will happen when you run this code? <br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "“9001” will print to the console."},
+                        { "text": "“String(9001)” will print to the console."},
+                        { "text": "“nil” will print to the console."},
+                        { "text": "This code will cause a compiler error."},
+                        { "text": "This code will crash at runtime.", "solution": true},
+                    ],
+                },
+
+                //Question 85
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider this code snippet and then answer the following question:<br><br><em>func login(username: String?) -> Bool {<br>_____ let user = username else { return false }<br>print(\"Logging in as \(user)\")<br>// TODO: Actually log in<br>return true<br>}<br></em><br>Which keyword should replace the blank to make this code compile? <br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "if"},
+                        { "text": "where"},
+                        { "text": "guard", "solution": true},
+                        { "text": "private"},
+                        { "text": "Nothing; this code is already complete."},
+                    ],
+                },
+				//Question 86
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "If a Swift file declares a variable on its very first line, that variable is declared in what scope? <br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "Global", "solution": true},
+                        { "text": "Local"},
+                        { "text": "Lexical"},
+                        { "text": "Default"},
+                        { "text": "Automatic"},
+                    ],
+                },
+                //Question 87
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider this code snippet and then answer the following question:<br><br><em>let pi = 3.14159<br><br>func computeCircleArea(radius: Double) -> Double {<br>let pi = 3.14<br>let area = pi * radius * radius<br>return area<br>}<br><br>let result = computeCircleArea(radius: 1.0)<br>print(result)<br></em><br>What is the result of executing this code? <br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "“3.14” will print to the console.", "solution": true},
+                        { "text": "“3.14159” will print to the console."},
+                        { "text": "This code will cause a compiler error: invalid redeclaration of \"pi\"."},
+                        { "text": "This code will crash at runtime."},
+                    ],
+                },
+                //Question 88
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider this struct and then answer the following question:<br><br><em>struct Circle {<br>let radius: Double<br>init(radius: Double) {<br>_____________<br>}<br>}<br><br></em><br>Which of the following should fill in the blank to complete the initializer, and why?<br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "let radius = radius, to correctly shadow the argument with a local variable radius", "html": "<em>let radius = radius</em>, to correctly shadow the argument with a local variable <em>radius</em>"},
+                        { "text": "radius = radius, because the compiler will know which is the property radius and which is the argument radius","html": "<em>radius = radius</em>, because the compiler will know which is the property radius and which is the argument <em>radius</em>"},
+                        { "text": "self.radius = radius, to disambiguate between the property radius and the argument radius","html": "<em>self.radius = radius</em>, to disambiguate between the property <em>radius</em> and the argument <em>radius</em>", "solution": true},
+                        { "text": "Nothing; this initializer can be left empty."},
+                    ],
+                },
+				//Question 89
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "You want to create an enumeration to define possible movements:<br><br><em>enum mazeMovements {<br>____ forward<br>____ backward<br>____ left<br>____ right<br>}<br></em><br>Which keyword should be used in place of the blanks to define the enumeration values?<br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "value"},
+                        { "text": "str"},
+                        { "text": "option"},
+                        { "text": "case", "solution": true},
+                    ],
+                },
+                //Question 90
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider this code snippet and then answer the following question:<br><br><em>enum Hand {<br>case right<br>case left<br>}<br><br>let scissorHand: Hand = .right<br><br>switch scissorHand {<br>case .right:<br>print(\"I am right-handed.\")<br>case .left:<br>print(\"I am left-handed.\")<br>}<br></em><br>What is the result of executing this code? <br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "The compiler emits an error because there is no default case in the switch statement."},
+                        { "text": "The compiler emits an error because the enumeration's cases do not have raw values."},
+                        { "text": "The compiler emits an error because enum is not a valid keyword; enumeration should be used instead."},
+                        { "text": "\"I am right-handed\" prints to the console", "solution": true},
+                    ],
+                },
+                //Question 91
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "In Swift, protocols exist to:<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "Enforce a consistent style in code written by multiple authors"},
+                        { "text": "Define a set of rules for how instances of different types interact", "solution": true},
+                        { "text": "Provide a bidirectional stream of data between two different objects"},
+                        { "text": "Allow a developer to implement new keywords and behaviors in the Swift compiler"},
+                    ],
+                },
+				//Question 92
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider the following function and then answer the question below:<br><br><em>func printResult(ofExecuting closure: ()->String) {<br>let result = closure()<br>print(result)<br>}<br></em><br>Which one of the following calls to <em>printResult(ofExecuting:)</em> will emit a compiler error? <br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "printResult {return \"Hello, World!\"}"},
+                        { "text": "printResult() {return \"Hello, World!\"}"},
+                        { "text": "printResult(ofExecuting: {\"Hello, World!\"})"},
+                        { "text": "printResult(ofExecuting: ) {return \"Hello, World!\"}", "solution": true},
+                        { "text": "printResult(ofExecuting: {()->String in return \"Hello, World!\"})"},
+                    ],
+                },
+                //Question 93
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "What's wrong with this code snippet?<br><br><em>let strings = [\"Huzzah\", \"Hullabaloo\", \"Hello\"]<br><br>let sorted = strings.sorted { (first, second) in<br>return [first, second]<br>}</em><br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "The closure passed to sorted(by:) must return a Boolean indicating whether first sorts before second.", "html": "The closure passed to <em>sorted(by:)</em> must return a Boolean indicating whether <em>first</em> sorts before <em>second</em>.", "solution": true},
+                        { "text": "The closure passed into sorted(by:) takes only one parameter and must return its sort index.","html": "The closure passed into <em>sorted(by:)</em> takes only one parameter and must return its sort index."},
+                        { "text": "The call to sorted(by:) is missing the required by: parameter name.","html": "The call to <em>sorted(by:)</em> is missing the required <em>by:</em> parameter name."},
+                        { "text": "The closure passed into sorted(by:) takes in two separate parameters, not a tuple of parameters.", "html": "The closure passed into <em>sorted(by:)</em> takes in two separate parameters, not a tuple of parameters."},
+                        { "text": "Nothing; this code will compile and run without error."},
+                    ],
+                },
+                //Question 94
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider this code snippet and then answer the following question:<br><br><em>let strings = [\"Huzzah\", \"Hullabaloo\", \"Hello\"]<br>let bigWords = strings.filter( _____ )<br><br></em>Which of the following are valid closures that could be passed to the filter() function above to produce the output [\"Hullabaloo\"]? <br><br>(Select three.) ",
+                    "options": [
+                        { "text": "{$0.characters.count > 6}", "solution": true  },
+                        { "text": "{str in str.characters.count > 6}", "solution": true },
+                        { "text": "{characters.count > 6}"},
+                        { "text": "{for str in str.characters.count > 6}"},
+                        { "text": "{(str: String) -> Bool in return str.characters.count > 6}", "solution": true},
+                    ],
+                },
+                //Question 95
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider this code snippet and then answer the following question:<br><br><em>let strings = [\"Huzzah\", \"Hullabaloo\", \"Hello\"]<br>let letterCounts = strings.map( _____ )<br><br></em>Which of the following are valid closures that could be passed to the <em>map()</em> function above to produce the output [6,10,5]? <br><br>(Select three.) ",
+                    "options": [
+                        { "text": "{characters.count}" },
+                        { "text": "{$0.characters.count}", "solution": true },
+                        { "text": "{str in str.characters.count}", "solution": true },
+                        { "text": "{for str in str.characters.count}"},
+                        { "text": "{(str: String) -> Int in return str.characters.count}", "solution": true },
+                    ],
+                },
+                //Question 96
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "When should you use an extension? <br><br>(Select two.) ",
+                    "options": [
+                        { "text": "To organize code into logical chunks", "solution": true  },
+                        { "text": "To replace implementations of methods on other types with your own"},
+                        { "text": "To avoid having to break up a large and complex class into smaller ones"},
+                        { "text": "To add stored properties to standard library types, so that passing data around is easier"},
+                        { "text": "To add functionality to types you can't edit directly, such as those in the standard library", "solution": true },
+                    ],
+                },
+                //Question 97
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following is <em>forbidden</em> from being added to a type by using an extension?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "Computed properties."},
+                        { "text": "Stored properties.", "solution": true},
+                        { "text": "Instance methods."},
+                        { "text": "Type methods."},
+                        { "text": "Initializers."},
+                    ],
+                },
+				//Question 98
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which statements declare distance as a Double? <br><br>(Select three.) ",
+                    "options": [
+                        { "text": "var distance: Double", "solution": true  },
+                        { "text": "var distance = 30.Double" },
+                        { "text": "var distance = 30"},
+                        { "text": "var distance = Double(30)", "solution": true},
+                        { "text": "var distance = Double"},
+                        { "text": "var distance = 30.0", "solution": true},
+                    ],
+                },
+                //Question 99
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "In the following line of code, which keyword should fill in the blank in order to declare <em>someNumber</em> as a constant?<br><br><em>_____ someNumber = 7</em><br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "const"},
+                        { "text": "var"},
+                        { "text": "let", "solution": true},
+                        { "text": "constant"},
+                    ],
+                },
+                //Question 100
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "In the following line of code, which keyword should fill in the blank in order to declare <em>someNumber</em> as a variable?<br><br><em>_____ someNumber = 8</em><br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "const"},
+                        { "text": "var", "solution": true},
+                        { "text": "let"},
+                        { "text": "constant"},
+                    ],
+                },
+                //Question 101
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "In the following sample code, which line will generate a compiler error?<br><br><em>A. let score = 100<br>B. var goal = 10<br>C. score += goal<br>D. print(score)</em><br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "let score = 100"},
+                        { "text": "var goal = 10"},
+                        { "text": "score += goal", "solution": true},
+                        { "text": "print(score)"},
+                    ],
+                },
+                //Question 102
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "In the following statement, <em>rate</em> is defined as what type?<br><em>let rate = 21.3</em><br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "Int"},
+                        { "text": "Double", "solution": true},
+                        { "text": "Bool"},
+                        { "text": "String"},
+                    ],
+                },
+                //Question 103
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "In the following statement, <em>myScore</em> is defined as what type?<br><em>let myScore = 99</em><br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "Int", "solution": true},
+                        { "text": "Double"},
+                        { "text": "Bool"},
+                        { "text": "String"},
+                    ],
+                },
+                //Question 104
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "In the following statement, <em>animal </em> is defined as what type?<br><em>let animal  = \"Zebra\"</em><br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "Int"},
+                        { "text": "Double"},
+                        { "text": "Bool"},
+                        { "text": "String", "solution": true},
+                    ],
+                },
+                //Question 105
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "In the following statement, <em>payout</em> is defined as what type?<br><em>let payout = totalScore >= 100</em><br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "Int"},
+                        { "text": "Double"},
+                        { "text": "Bool", "solution": true},
+                        { "text": "String"},
+                    ],
+                },
+                //Question 106
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following are valid comment lines? <br><br>(Select two.) ",
+                    "options": [
+                        { "text": "# This is a comment" },
+                        { "text": "// This is a comment", "solution": true },
+                        { "text": "% This is a comment %"},
+                        { "text": "<!--This is a comment -->"},
+                        { "text": "/* This is a comment */", "solution": true },
+                    ],
+                },
+                //Question 107
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which is the correct way to format the number 123857209833 so that it is easer to read within Swift code? <br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "123 857 209 833"},
+                        { "text": "123,857,209,833"},
+                        { "text": "123_857_209_833", "solution": true},
+                        { "text": "123.857.209.833"},
+                    ],
+                },
+                //Question 108
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following statements will increment the variable <em>myScore</em> by 1 in Swift?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "myScore++"},
+                        { "text": "++myScore"},
+                        { "text": "myScore += 1", "solution": true},
+                        { "text": "myScore.increment(1)"},
+                    ],
+                },
+                //Question 109
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Your Swift program has two variables: a Double named <em>doubleValue</em> and an Int named <em>intValue</em>. Which of the following statements allows the two values to be added together?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "let total = doubleValue + intValue"},
+                        { "text": "let total = doubleValue + Double(intValue)", "solution": true},
+                        { "text": "let total = doubleValue.addInt(intValue)"},
+                        { "text": "let total = doubleValue.add(intValue)"},
+                        { "text": "let total = doubleValue + intValue.double" },
+                    ],
+                },
+                //Question 110
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "What is the output from the following statement?<br><br><em>print (4 + 3 * 2 + 6 / 2)</em><br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "10"},
+                        { "text": "13", "solution": true},
+                        { "text": "17"},
+                        { "text": "28"},
+                    ],
+                },
+				//Question 111
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "What is the output from the following statement?<br><br><em>var time = 24<br><br>if time > 4 && time < 12 {<br>print(\"Good morning!\")<br>} ___ time <= 18 {<br>print(\"Good afternoon.\")<br>} else {print(\"Good evening\")<br>}<br><br>What should fill in the blank to make this code compile without error? </em><br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "else"},
+                        { "text": "if"},
+                        { "text": "else if", "solution": true},
+                        { "text": "elseif"},
+                        { "text": "elif" },
+                    ],
+                },
+				//Question 112
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "What will be the result of building and running this code?<br><br><em>var time = 24<br><br>if time > 4 && time < 12  {<br>print(\"Good morning!\")<br>} if time <= 18 {<br>print(\"Good afternoon.\")<br>} else {print(\"Good evening\")<br>}<br><br>What should fill in the blank to make this code compile without error? </em><br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "\"Good morning\" will print to the console.", "html": "<em>\"Good morning\"</em> will print to the console."},
+                        { "text": "\"Good afternoon\" will print to the console.", "html": "\"Good afternoon\" will print to the console."},
+                        { "text": "\"Good evening\" will print to the console.", "html": "\"Good evening\" will print to the console."},
+                        { "text": "This code will not compile.", "solution": true},
+                        { "text": "This code will crash at runtime." },
+                    ],
+                },
+                //Question 113
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following returns <em>true</em> if both <em>condition1</em> and <em>condition2</em> are true? <br><br>(Select two.)  ",
+                    "options": [
+                        { "text": "condition1 && condition2", "html": "<em>condition1 && condition2</em>", "solution": true  },
+                        { "text": "condition1 & condition2", "html": "<em>condition1 & condition2</em>"},
+                        { "text": "condition1 || condition2", "html": "<em>condition1 || condition2</em>", "solution": true },
+                        { "text": "condition1 | condition2", "html": "<em>condition1 | condition2</em>"},
+                        { "text": "condition1 % condition2", "html": "<em>condition1 % condition2</em>"},
+                    ],
+                },
+                //Question 114
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which expression returns <em>true</em> if <em>condition1</em> is true and <em>condition2</em> is false?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "condition1 && condition2", "html": "<em>condition1 && condition2</em>"},
+                        { "text": "condition1 & condition2", "html": "<em>condition1 & condition2</em>"},
+                        { "text": "condition1 || condition2", "html": "<em>condition1 || condition2</em>", "solution": true },
+                        { "text": "condition1 | condition2", "html": "<em>condition1 | condition2</em>"},
+                        { "text": "condition1 % condition2", "html": "<em>condition1 % condition2</em>"},
+                    ],
+                },
+                //Question 115
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Review the following code sample and answer the question below.<br><br><em>let numberOfWheels = 2<br><br>switch numberOfWheels {<br>case 1:<br>print(\"Unicycle\")<br>break<br>case 2:<br>print(\"Bicycle\")<br>case 3:<br>print(\"Tricycle\")<br><br></em>Will the above code compile, and if not, why? <br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "Yes, the code will compile with no errors."},
+                        { "text": "No, the code will not compile, because it is missing break statements."},
+                        { "text": "No, the code will not compile, because the switch statement is not exhaustive.", "solution": true},
+                        { "text": "No, the code will not compile, because there are no parentheses around the condition."},
+                    ],
+                },
+
+
+                //Question 116
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "What will print to the console if you execute this code?<br><br><em>print(\"I put \\\"\\\\\\\" in your string!\")</em><br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "I put \\ in your string!"},
+                        { "text": "I put \"\\\" in your string!", "solution": true},
+                        { "text": "I put \"\\\\\" in your string!"},
+                        { "text": "I put \\\"\\\\\\\" in your string!"},
+                    ],
+                },
+
+				//Question 117
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider this string declaration and answer the question below:<br><br><em>var name: String = \"Johnny Appleseed\"</em><br><br>Which of the following are valid ways to determine if name is an empty string? <br><br>(Select two.)  ",
+                    "options": [
+                        { "text": "name.isEmpty"},
+                        { "text": "name.characters.isEmpty", "solution": true },
+                        { "text": "name == nil"},
+                        { "text": "name == \"\"", "solution": true },
+                        { "text": "isEmpty(name)"},
+                    ],
+                },
+                //Question 118
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following ways to print \"Hello, World!\" to the console will emit a compiler error?<br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "print(\"Hello,\" \"World\")", "solution": true},
+                        { "text": "print(\"Hello,\", \"World!\")"},
+                        { "text": "print(\"Hello, \" + \"World!\")"},
+                        { "text": "print(\"Hello, \".appending(\"World!\"))"},
+                    ],
+                },
+                //Question 119
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following statements compares two strings, named <em>firstString</em> and <em>secondString</em>, for case-sensitive equality?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "firstString = secondString"},
+                        { "text": "firstString == secondString", "solution": true},
+                        { "text": "firstString.isEqual(secondString)"},
+                        { "text": "strcmp(firstString,secondString)"},
+                    ],
+                },
+                //Question 120
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Given a constant named studentName with a value of \"John\" and a constant named testScore with a value of 87, which statement in Swift would produce the following output?<br><br><em>John got 87 on the exam.</em><br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "print(studentName + \" got \" + testScore + \" on the exam.\")"},
+                        { "text": "print(\"\(studentName) got \(testScore) on the exam.\")", "solution": true},
+                        { "text": "print(\"%s got %i on the exam.\", studentName, testScore)"},
+                        { "text": "print(\"${studentName} got ${testScore} on the exam.\")"},
+                    ],
+                },
+                //Question 121
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "If a string named <em>animals</em> contains the word \"cow\", which of the following is a valid expression that would return <em>true</em>? <br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "animals.contains(\"cow\")", "solution": true},
+                        { "text": "(\"cow\" in animals)"},
+                        { "text": "animals.includes(\"cow\")"},
+                        { "text": "animals.find(\"cow\")"},
+                    ],
+                },
+                //Question 122
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following functions returns a value?<br><br> (Select two.) ",
+                    "options": [
+                        { "text": "func move(_ player: String, to team: String)" },
+                        { "text": "func move(_ player: String, to team: String) -> Void" },
+                        { "text": "func move(_ player: String, to team: String) -> Bool", "solution": true },
+                        { "text": "func move(_ player: String, to team: String) -> ()"},
+                        { "text": "func move(_ player: String, to team: String) -> Bool?", "solution": true},
+                    ],
+                },
+                //Question 123
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Review the following code snippet and answer the question below:<br><br><em>func retire(player retiree: String) {<br>//...<br>}<br><br></em>Which is the correct syntax for calling this function?<br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "retire(player: \"Mikey\")", "solution": true},
+                        { "text": "retire(retiree: \"Mikey\")"},
+                        { "text": "retire(\"Mikey\")"},
+                        { "text": "retire(player retiree: \"Mikey\")"},
+                    ],
+                },
+                //Question 124
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Review the following code snippet and answer the question below:<br><br><em>func retire(_ playerToRemove: String) {<br>//...<br>}<br><br></em>Which is the correct syntax for calling this function?<br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "retire(\"Mikey\")", "solution": true},
+                        { "text": "retire(_: \"Mikey\")"},
+                        { "text": "retire(playerToRemove: \"Mikey\")"},
+                        { "text": "retire(_ playerToRemove: \"Mikey\")"},
+                    ],
+                },
+                //Question 125
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following is a valid way to define a function that takes in a string with a default value?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "func setDefaultCity(_ newDefault: String: \"Atlantis\")"},
+                        { "text": "func setDefaultCity(_ newDefault: String default: \"Atlantis\")"},
+                        { "text": "func setDefaultCity(_ newDefault: String = \"Atlantis\")", "solution": true},
+                        { "text": "func setDefaultCity(_ newDefault = \"Atlantis\")"},
+                    ],
+                },
+				//Question 126
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider the code snippet below and then answer the question:<br><br><em>struct Town {<br>____ let maxPopulation = 9000<br>var population = 0<br>}<br><br>var myTown = Town()<br>myTown.population = 512<br>let isOverPopulated = Town.maxPopulation > myTown.population<br></em><br>Which keyword should fill in the blank so that the above code compiles? <br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "static", "solution": true},
+                        { "text": "type"},
+                        { "text": "class"},
+                        { "text": "private"},
+                        { "text": "mutating"},
+                    ],
+                },
+                //Question 127
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider the code snippet below and then answer the question:<br><br><em>struct Acceleration {<br>static let gravity = 9.8<br>let x: Double = 0, y: Double = 0, z: Double = 0<br>}<br><br>let a = Acceleration()<br></em><br>Which of the following is the correct way to access the value of <em>gravity</em>? <br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "let g = Acceleration.self.gravity"},
+                        { "text": "let g = a.gravity"},
+                        { "text": "let g = Acceleration.gravity", "solution": true},
+                        { "text": "let g = gravity"},
+                    ],
+                },
+				//Question 128
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider the following structure definition, and then answer the question below:<br><br><em>struct IndexedString: String {<br>var identifier: String<br>var index: Int = 0<br>var nextIndex: Int {<br>return index + 1<br>}<br>}<br></em>Will this code compile, and if not, why not? <br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "Yes, this code will compile without error."},
+                        { "text": "No, a structure without initializers must have default values for all properties."},
+                        { "text": "No, structures do not support inheritance.", "solution": true},
+                        { "text": "No, structures cannot have computed properties."},
+                    ],
+                },
+                //Question 129
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider this structure definition and then answer the question.<br><br><em>struct HumanBody {<br>var heightInMeters: Double<br>var weightInKilos: Double<br>}<br><br></em>Which of the following is a valid way to create an instance of <em>HumanBody</em>?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "var body = HumanBody()"},
+                        { "text": "var body = HumanBody(2.0, 80)"},
+                        { "text": "var body = HumanBody(heightInMeters: 2.0, weightInKilos: 80)", "solution": true},
+                        { "text": "var body = HumanBody(heightInMeters: 2.0)"},
+                    ],
+                },
+                //Question 130
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider the following structure and then answer the question:<br><br><em>struct HumanBody {<br>var heightInMeters: Double = 1.8<br>var weightInKilos: Double = 75<br><br>_____ func gainWeight(kilos: Double) {<br>weightInKilos += kilos<br>}<br>}<br><br></em>What keyword should be used in the blank above in order to make this code compile?<br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "mutating", "solution": true},
+                        { "text": "variable"},
+                        { "text": "public"},
+                        { "text": "mutable"},
+                        { "text": "No keyword is required; this code will compile."},
+                    ],
+                },
+                //Question 131
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider this structure and then answer the question about its four initializers:<br><br><em>struct Person {<br>var name: String<br>A.  init() {<br>name = \"Johnny Appleseed\"<br>}<br><br>B.  init(name: String) {<br>name = name<br>}<br><br>C.  init(firstName: String, lastName: String) {<br>name = \"\(firstName) \(lastName)\"<br>}<br><br>D.  init {<br>name = \"Johnny Appleseed\"<br>}<br></em><br>Which TWO of the above initializers will cause compiler errors? <br><br>(Select two.)",
+                    "options": [
+                        { "text": "A" },
+                        { "text": "B", "solution": true },
+                        { "text": "C"},
+                        { "text": "D", "solution": true },
+                    ],
+                },
+                //Question 132
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider this structure and then answer the question:<br><br><em>struct Person {<br>var name = \"Johnny Appleseed\"<br>var dateOfBirth = Date(timeIntervalSince1970: 0)<br>var ageInSeconds: Int {<br>return -Int(dateOfBirth.timeIntervalSinceNow)<br>}<br>}<br></em><br>Which of the following are true about <em>ageInSeconds</em>? <br><br>(Select two.)",
+                    "options": [
+                        { "text": "It is a property observer."},
+                        { "text": "It is a type property."},
+                        { "text": "It is a stored property."},
+                        { "text": "It is a computed property.", "solution": true },
+                        { "text": "It is an instance property.", "solution": true  },
+                    ],
+                },
+
+                //Question 133
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following are differences between structures and classes? <br><br>(Select three.) ",
+                    "options": [
+                        { "text": "Structures are passed by value and classes are passed by reference.", "solution": true  },
+                        { "text": "Classes have inheritance and structures do not.", "solution": true },
+                        { "text": "Structures can have compiler-synthesized memberwise initializers, and classes never do.", "solution": true },
+                        { "text": "Classes cannot have type properties, but structures can."},
+                        { "text": "Structures cannot have methods that change their properties, but classes can."},
+                        { "text": "Structures take up more space in memory than classes."},
+                    ],
+                },
+                //Question 134
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider this code snippet and then answer the question below:<br><br><em>class Town {<br>var name: String = \"Podunk\"<br>var population: Int = 0<br>}<br>}<br><br>let myTown = Town()<br>myTown.population = 42<br>let yourTown = myTown<br>yourTown.population = 9000<br><br>print(myTown.population)<br></em><br>What will print to the console?<br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "0"},
+                        { "text": "42"},
+                        { "text": "9000", "solution": true},
+                        { "text": "Nothing; this code will not compile."},
+                    ],
+                },
+                //Question 135
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Consider this code snippet and then answer the question below:<br><br><em>struct Town {<br>var name: String = \"Podunk\"<br>var population: Int = 0<br>}<br><br>var myTown = Town()<br>myTown.population = 42<br>var yourTown = myTown<br>yourTown.population = 9000<br><br>print(myTown.population)<br></em><br>What will print to the console?<br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "0"},
+                        { "text": "42", "solution": true},
+                        { "text": "9000"},
+                        { "text": "Nothing; this code will not compile."},
+                    ],
+                },
+                //Question 136
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "What is the correct way to declare a class Car that is a subclass of a class named <em>Vehicle?</em><br><br>(Select the best answer.)",
+                    "options": [
+                        { "text": "class Car: Vehicle { … }", "solution": true},
+                        { "text": "class Car, Vehicle { … }"},
+                        { "text": "class Car <Vehicle> { … }"},
+                        { "text": "class Car subclasses Vehicle { … }"},
+                        { "text": "class Car extends Vehicle { … }"},
+                    ],
+                },
+                //Question 137
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Given this class definition, which of the following are true? <br><em>class Person {<br>var name: String<br>var dateOfBirth: Date<br>}<br><br>class Employee: Person {<br>var employeeID: Int<br>}</em><br><br>(Select two.)",
+                    "options": [
+                        { "text": "Person is a base class.","html": "<em>Person</em> is a base class.", "solution": true  },
+                        { "text": "Employee is a base class.","html": "<em>Employee</em> is a base class."},
+                        { "text": "URLReqPerson is a subclass of Employee.uest","html": "<em>Person</em> is a subclass of <em>Employee</em>."},
+                        { "text": "Employee is a subclass of Person.","html": "<em>Employee</em> is a subclass of <em>Person</em>.", "solution": true },
+                        { "text": "Person is an abstract class.","html": "<em>Person</em> is an abstract class."},
+                        { "text": "Employee is an abstract class.","html": "<em>Employee</em> is an abstract class."},
+                    ],
+                },
+                //Question 138
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "When should you use a class instead of a structure for a new type? <br><br>(Select three.)",
+                    "options": [
+                        { "text": "When you're working with a framework that uses classes.", "solution": true  },
+                        { "text": "When you want to refer to the same instance of a type in multiple places.", "solution": true },
+                        { "text": "When the relationships you want to model require inheritance.", "solution": true },
+                        { "text": "When you want to make your app take up less space."},
+                        { "text": "You should start with a class, and use a structure only if you must."},
+                        { "text": "When you want to make your type's properties easy to mutate."},
+                    ],
+                },
+				//Question 139
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following are valid ways to add a key/value pair to a dictionary?<br><br> (Select two.)",
+                    "options": [
+                        { "text": "myDictionary[someKey] = someValue", "solution": true  },
+                        { "text": "myDictionary.append(someValue, forKey: someKey)" },
+                        { "text": "myDictionary.updateValue(someValue, forKey: someKey)", "solution": true},
+                        { "text": "myDictionary.append(someKey, someValue)"},
+                        { "text": "myDictionary.setValue(someValue, forKey: someKey)"},
+                    ],
+                },
+                //Question 140
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following are valid ways to remove a key/value pair from a dictionary? <br><br>(Select two.)",
+                    "options": [
+                        { "text": "names.removeValue(forKey: someKey)", "solution": true  },
+                        { "text": "names.remove(key: someKey)"},
+                        { "text": "names[someKey].remove()"},
+                        { "text": "names[someKey] = nil", "solution": true },
+                        { "text": "names.delete(someKey)"},
+                    ],
+                },
+				//Question 141
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following are valid ways to create an array of strings? <br><br>(Select three.) ",
+                    "options": [
+                        { "text": "var myArray: [String] = []", "solution": true  },
+                        { "text": "var myArray: Array<String> = []", "solution": true },
+                        { "text": "var myArray: Array(String) = []"},
+                        { "text": "var myArray = [String]"},
+                        { "text": "var myArray = [String]()", "solution": true },
+                        { "text": "var myArray = Array(of: String)"},
+                    ],
+                },
+                //Question 142
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCSA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which property of an array will tell you how many items it contains?<br><br>(Select the best answer.) ",
+                    "options": [
+                        { "text": "size"},
+                        { "text": "count", "solution": true},
+                        { "text": "length"},
+                        { "text": "indices"},
+                        { "text": "numberOfItems"},
+                    ],
+                },
+                //Question 143
+                {
+                    "name": "LKWMCQuestion",
+                    "type": "MCMA",
+                    "allowedAttempts" : 1,
+                    "randomize" : false,
+                    "promptText": "Which of the following are valid ways to add a new item to the end of an array?<br><br> (Select two.) ",
+                    "options": [
+                        { "text": "myArray.append(newItem)", "solution": true  },
+                        { "text": "myArray += newItem"},
+                        { "text": "myArray.add(newItem)"},
+                        { "text": "myArray.insert(newItem, at: myArray.count)", "solution": true },
+                        { "text": "myArray.push(newItem)"},
+                    ],
+                }
+
+
+
+
+            ];
+
+
+            //NOTE: Modified this function to use a callback to do some error checking and only show if successful.
+            LKWWidget.widgetCreate(config, 'ADiv').loadDataAsync(function(err) {
+                if (err) {
+                    $('#status').html('Failed to load Asssessment: ' + err.message);
+                }
+                else {
+                    $('#status').hide();
+                    $('#content').show();
+                }
+            }, null, questionData);
+        }
+
+        //Initialize by forcing authentication and then displaying the body of the page if successful
+        $(document).ready(function () {
+          LKWService.verifyCredentials(function (err) {
+                if (err) {
+                    $('#status').html('Failed to Authenticate');
+                }
+                else {
+                    //NOTE: We really don't know we've been successful till assessment data is loaded so move to next status
+                    $('#status').html('Loading Asssessment');
+					createNewAssessmentWidget();
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+<!-- MASTHEAD_BEGIN -->
+<div data-500="background-color:#00b2ef; color:#00b2ef;" data-0="background-color:#00b2ef; color:#00b2ef" role="navigation" class="navbar skrollable skrollable-between">
+	<div class="logo-div"><img src="img/logo.png" style="max-height: 49px; max-width: 333px;"><h1>An Introduction to Swift and iOS SDK - Assessment</h1></div>
+
+</div>
+
+<!-- MASTHEAD_END -->
+<main role="main">
+    <div id="status" style="margin-top: 70px;">Authenticating via SSO...</div>
+
+    <div id="content" style="display: none;margin-top: 70px;" class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="ADiv"></div>
+            </div>
+        </div>
+    </div>
+	</main>
+	<div class="footer">
+	<div class="buffer"></div>
+	<div class="footer_text">
+	<div><p>&copy; IBM Corporation 2019</p></div>
+	<div><p>Powered by GBS Learning & Knowledge</p></div>
+	<div><p><a href="https://w3.ibm.com/w3publisher/w3-privacy-notice/" target="_blank">IBM Internal Privacy Statement</a></p></div>
+	</div>
+	</div>
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
+
+</html>
